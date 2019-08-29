@@ -1,9 +1,54 @@
 <ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Login</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeholder="Senha"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+          Entrar
+        </ion-button>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Cadastro</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="text" placeholder="Nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeholder="Senha"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
+          Cadastrar
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
   <div class="ocean">
     <div class="waves"></div>
 
-    <div class="container ion text-center">
+    <div class="container ion-text-center">
       <span>Aplicativo Oficial da FEPEX</span>
+      <br>
+      <span>IFC Campus Fraiburgo</span>
+
     </div>
   </div>
 </ion-content>
