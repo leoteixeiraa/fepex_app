@@ -1,5 +1,7 @@
 {
   "name": "fepex_app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -2,7 +2,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    width: 65%;
+    width: 75%;
     margin: 0 auto;
     z-index: 2;
 
@@ -25,11 +25,11 @@ ion-slides {
     .slide-inner {
         width: 75%;
         color: #fff;
-        background-color: #0071bc;
+        background-color: #0072bc;
         border-radius: 10px;
 
         ion-item {
-            --background: rgba(225, 255, 255, 0.2);
+            --background: rgba(255, 255, 255, 0.2);
             --border-radius: 10px;
 
             ion-input {
