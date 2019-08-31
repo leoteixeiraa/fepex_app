@@ -1,3 +1,44 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 65%;
+    margin: 0 auto;
+    z-index: 2;
+
+    &.top {
+        top: 5%;
+    }
+
+    &.bottom {
+        bottom: 30%;
+
+        span {
+            color: #fff;
+        }
+    }
+}
+
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 75%;
+        color: #fff;
+        background-color: #0071bc;
+        border-radius: 10px;
+
+        ion-item {
+            --background: rgba(225, 255, 255, 0.2);
+            --border-radius: 10px;
+
+            ion-input {
+                --color: #fff;
+            }
+        }
+    }
+}
+
 .ocean {
     position: absolute;
     left: 0;
@@ -17,4 +58,5 @@
         background-size: contain;
         transition: all 0.5s;
     }
+
 }

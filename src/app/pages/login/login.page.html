@@ -1,4 +1,16 @@
-<ion-content>
+<ion-content class="swiper-no-swiping">
+  <div align="center" class="container top">
+    <img src="/assets/img/logo2.jpeg">
+
+    <ion-segment (ionChange)="segmentChanged($event)" mode="ios" value="login">
+      <ion-segment-button mode="ios" value="login">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="register">
+        <ion-label>Cadastro</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
   <ion-slides mode="ios" pager="ios" scrollbar="ios">
     <ion-slide>
       <div class="slide-inner ion-padding">
@@ -44,10 +56,9 @@
   <div class="ocean">
     <div class="waves"></div>
 
-    <div class="container ion-text-center">
-      <span>Aplicativo Oficial da FEPEX</span>
-      <br>
-      <span>IFC Campus Fraiburgo</span>
+    <div class="container bottom ion-text-center">
+      <span>Aplicativo Oficial da FEPEX - IFC FRAIBURGO</span>
+
 
     </div>
   </div>
