@@ -2,16 +2,22 @@
     position: absolute;
     left: 0;
     right: 0;
-    width: 75%;
+    width: 55%;
     margin: 0 auto;
     z-index: 2;
 
     &.top {
-        top: 5%;
+        top: 3%;
+    }
+    &.top_image {
+        top: 2%;
+        width: 65%;
     }
 
+
+
     &.bottom {
-        bottom: 30%;
+        bottom: 5%;
 
         span {
             color: #fff;
