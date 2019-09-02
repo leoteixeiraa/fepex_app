@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
       this.authService.getAuth().onAuthStateChanged(user => { //detectar mudanças do usuario . Usuario logado, apagado, mudado.
-        if (!user) this.router.navigate(['login']); //usuario não logado, volta pra pag de login
+        if (!user) this.router.navigate(['login ']); //usuario não logado, volta pra pag de login
 
         resolve(user ? true : false);
       })
