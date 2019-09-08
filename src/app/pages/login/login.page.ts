@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
-    this.keyboard.isVisible
+    // this.keyboard.isVisible
   }
 
   segmentChanged(event: any) {
@@ -88,5 +88,10 @@ export class LoginPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastCtrl.create({ message, duration: 2000 });
     toast.present();
+
   }
+
+
+
 }
+
