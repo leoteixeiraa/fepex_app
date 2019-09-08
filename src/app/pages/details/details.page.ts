@@ -34,6 +34,10 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() { }
 
+  ngOnDestroy() {
+    if (this.productSubscription) this.productSubscription.unsubscribe();
+  }
+
   loadProduct() {
     this.productSubscription = this.productService.getProduct(this.productId).subscribe(data => {
       this.product = data;
@@ -46,20 +50,27 @@ export class DetailsPage implements OnInit {
     this.product.userId = this.authService.getAuth().currentUser.uid; //pegar id do usuario para validação
 
     if (this.productId) { //tentar atualizar o produto, se não ira criar o produto
+      try {
+        await this.productService.updateProduct(this.productId, this.product);
+        await this.loading.dismiss();
 
+        this.navCtrl.navigateBack('/home');
+      } catch (error) {
+        this.presentToast('Erro ao tentar salvar');
+        this.loading.dismiss();
+      }
     } else {
       this.product.createdAt = new Date().getTime();
-    } try {
-      await this.productService.addProduct(this.product);
-      await this.loading.dismiss();
 
+      try {
+        await this.productService.addProduct(this.product);
+        await this.loading.dismiss();
 
-
-    } catch (error) {
-      this.presentToast('Erro ao tentar salvar');
-      this.loading.dismiss();
-
-      this.navCtrl.navigateBack('/home');
+        this.navCtrl.navigateBack('/home');
+      } catch (error) {
+        this.presentToast('Erro ao tentar salvar');
+        this.loading.dismiss();
+      }
     }
   }
 

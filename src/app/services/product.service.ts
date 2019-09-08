@@ -37,10 +37,11 @@ export class ProductService {
   }
 
   updateProduct(id: string, product: Product) {
+    return this.productsCollection.doc<Product>(id).update(product);
 
   }
 
   deleteProduct(id: string) {
-
+    return this.productsCollection.doc(id).delete();
   }
 }
