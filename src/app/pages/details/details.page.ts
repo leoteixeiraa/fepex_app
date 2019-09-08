@@ -58,6 +58,8 @@ export class DetailsPage implements OnInit {
       } catch (error) {
         this.presentToast('Erro ao tentar salvar');
         this.loading.dismiss();
+        console.error(error);
+
       }
     } else {
       this.product.createdAt = new Date().getTime();
