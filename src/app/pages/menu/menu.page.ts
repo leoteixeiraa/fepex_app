@@ -11,7 +11,8 @@ export class MenuPage implements OnInit {
 
   pages = [
     {
-      title: 'First Page with Tabs',
+      icon: 'md-calendar',
+      title: 'Calendario do Evento',
       url: '/menu/first'
     },
     {
