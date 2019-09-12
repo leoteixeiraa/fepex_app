@@ -14,6 +14,10 @@ const routes: Routes = [
   { path: 'second', loadChildren: './pages/second/second.module#SecondPageModule', canActivate: [AuthGuard] },
   { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule', canActivate: [AuthGuard] },
   { path: 'tab2', loadChildren: './pages/tab2/tab2.module#Tab2PageModule', canActivate: [AuthGuard] },
+  { path: 'tab3', loadChildren: './pages/tab3/tab3.module#Tab3PageModule', canActivate: [AuthGuard] },
+  { path: 'mapa', loadChildren: './pages/mapa/mapa.module#MapaPageModule', canActivate: [AuthGuard] },
+  { path: 'oficinas', loadChildren: './pages/oficinas/oficinas.module#OficinasPageModule', canActivate: [AuthGuard] },
+  { path: 'trabalhos', loadChildren: './pages/trabalhos/trabalhos.module#TrabalhosPageModule', canActivate: [AuthGuard] },
 ];
 
 

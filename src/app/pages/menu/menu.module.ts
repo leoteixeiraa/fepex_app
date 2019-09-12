@@ -17,6 +17,18 @@ const routes: Routes = [
       {
         path: 'second',
         loadChildren: '../second/second.module#SecondPageModule'
+      },
+      {
+        path: 'second/details',
+        loadChildren: '../details/details.module#DetailsPageModule'
+      },
+      {
+        path: 'mapa',
+        loadChildren: '../mapa/mapa.module#MapaPageModule'
+      },
+      {
+        path: 'trabalhos',
+        loadChildren: '../trabalhos/trabalhos.module#TrabalhosPageModule'
       }
     ]
   }

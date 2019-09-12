@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-menu',
@@ -12,16 +14,28 @@ export class MenuPage implements OnInit {
   pages = [
     {
       icon: 'md-calendar',
-      title: 'Calendario do Evento',
+      title: 'Programação Evento',
       url: '/menu/first'
     },
     {
-      title: 'Second Page blank',
+      icon: 'md-paper',
+      title: 'Noticias',
       url: '/menu/second'
+    },
+    {
+      icon: 'md-document',
+      title: 'Trabalhos',
+      url: '/menu/trabalhos'
+    },
+    {
+      icon: 'md-map',
+      title: 'Mapa',
+      url: '/menu/mapa'
     }
   ];
 
-  constructor(private router: Router) {
+  constructor(private authService: AuthService,
+    private router: Router) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
@@ -31,6 +45,15 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
 
+  }
+  async logout() {
+
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.error(error);
+    } finally {
+    }
   }
 
 }
