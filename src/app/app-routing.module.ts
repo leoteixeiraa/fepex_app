@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'mapa', loadChildren: './pages/mapa/mapa.module#MapaPageModule', canActivate: [AuthGuard] },
   { path: 'oficinas', loadChildren: './pages/oficinas/oficinas.module#OficinasPageModule', canActivate: [AuthGuard] },
   { path: 'trabalhos', loadChildren: './pages/trabalhos/trabalhos.module#TrabalhosPageModule', canActivate: [AuthGuard] },
+  { path: 'premiacao', loadChildren: './pages/premiacao/premiacao.module#PremiacaoPageModule' },
+  { path: 'culturais', loadChildren: './pages/culturais/culturais.module#CulturaisPageModule' },
 ];
 
 

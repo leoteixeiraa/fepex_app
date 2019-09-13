@@ -29,6 +29,18 @@ const routes: Routes = [
       {
         path: 'trabalhos',
         loadChildren: '../trabalhos/trabalhos.module#TrabalhosPageModule'
+      },
+      {
+        path: 'oficinas',
+        loadChildren: '../oficinas/oficinas.module#OficinasPageModule'
+      },
+      {
+        path: 'premiacao',
+        loadChildren: '../premiacao/premiacao.module#PremiacaoPageModule'
+      },
+      {
+        path: 'culturais',
+        loadChildren: '../culturais/culturais.module#CulturaisPageModule'
       }
     ]
   }

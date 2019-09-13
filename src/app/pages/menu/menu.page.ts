@@ -31,6 +31,21 @@ export class MenuPage implements OnInit {
       icon: 'md-map',
       title: 'Mapa',
       url: '/menu/mapa'
+    },
+    {
+      icon: 'ios-construct',
+      title: 'Oficinas',
+      url: '/menu/oficinas'
+    },
+    {
+      icon: 'md-happy',
+      title: 'Apresentações Culturais',
+      url: '/menu/culturais'
+    },
+    {
+      icon: 'md-trophy',
+      title: 'Premiações',
+      url: '/menu/premiacao'
     }
   ];
 
