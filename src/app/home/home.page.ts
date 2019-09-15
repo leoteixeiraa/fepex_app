@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { ProductService } from '../services/product.service';
 import { AuthService } from '../services/auth.service';
 import { LoadingController, ToastController } from '@ionic/angular';
-
+//teste
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

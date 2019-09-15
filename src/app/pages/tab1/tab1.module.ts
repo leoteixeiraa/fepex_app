@@ -13,7 +13,7 @@ const routes: Routes = [
     component: Tab1Page
   }
 ];
-
+//teste
 @NgModule({
   imports: [
     CommonModule,
@@ -23,4 +23,4 @@ const routes: Routes = [
   ],
   declarations: [Tab1Page]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule { }
