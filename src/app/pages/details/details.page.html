@@ -1,34 +1,38 @@
+<!-- details da tab1 -->
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Noticia</ion-title>
+    <ion-title>Sobre</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="product.name" placeholder="Nome"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="product.description" placeholder="Descrição"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="product.picture" placeholder="Foto"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="product.price" placeholder="Tipo Trabalho"></ion-input>
-    </ion-item>
-  </ion-list>
-</ion-content>
+<ion-content>
+  <div class="about-header">
+    <img [src]="quarta.picture" alt="">
+  </div>
+  <div class="about-info">
+    <h4 class="ion-padding-start">{{quarta.title}}</h4>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="saveProduct()" expand="block">
-      Adicionar Noticia
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Data e Hora</ion-label>
+        <h6>{{quarta.date}} &mdash; {{quarta.time_start}} </h6>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Local</ion-label>
+        <h6>{{quarta.local}}</h6>
+      </ion-item>
+    </ion-list>
+
+    <p class="ion-padding-start ion-padding-end">
+      {{ quarta.description }}
+    </p>
+  </div>
+</ion-content>

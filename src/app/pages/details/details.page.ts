@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/interfaces/product';
-import { LoadingController, ToastController, NavController } from '@ionic/angular';
+import { Quarta } from 'src/app/interfaces/quarta';
+import { LoadingController, ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ProductService } from 'src/app/services/product.service';
+import { QuartaService } from 'src/app/services/quarta.service';
 
 @Component({
   selector: 'app-details',
@@ -12,49 +13,49 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
-  private product: Product = {};
+  private quarta: Quarta = {};
   private loading: any;
-  private productId: string = null;
-  private productSubscription: Subscription;
+  private quartaId: string = null;
+  private quartaSubscription: Subscription;
 
   constructor(
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private authService: AuthService,
     private activeRoute: ActivatedRoute,
-    private productService: ProductService,
+    private quartaService: QuartaService,
     private navCtrl: NavController
   ) {
-    this.productId = this.activeRoute.snapshot.params['id'];
+    this.quartaId = this.activeRoute.snapshot.params['id'];
     //se o id estiver no parametro
 
-    if (this.productId) this.loadProduct();
+    if (this.quartaId) this.loadQuarta();
 
   }
 
   ngOnInit() { }
 
   ngOnDestroy() {
-    if (this.productSubscription) this.productSubscription.unsubscribe();
+    if (this.quartaSubscription) this.quartaSubscription.unsubscribe();
   }
 
-  loadProduct() {
-    this.productSubscription = this.productService.getProduct(this.productId).subscribe(data => {
-      this.product = data;
+  loadQuarta() {
+    this.quartaSubscription = this.quartaService.getQuarta(this.quartaId).subscribe(data => {
+      this.quarta = data;
     });
   }
 
-  async saveProduct() {
+  async saveQuarta() {
     await this.presentLoading(); //componente carregando mostrado para o usuario 
 
-    this.product.userId = this.authService.getAuth().currentUser.uid; //pegar id do usuario para validação
+    this.quarta.userId = this.authService.getAuth().currentUser.uid; //pegar id do usuario para validação
 
-    if (this.productId) { //tentar atualizar o produto, se não ira criar o produto
+    if (this.quartaId) { //tentar atualizar o produto, se não ira criar o produto
       try {
-        await this.productService.updateProduct(this.productId, this.product);
+        await this.quartaService.updateQuarta(this.quartaId, this.quarta);
         await this.loading.dismiss();
 
-        this.navCtrl.navigateBack('/home');
+        this.navCtrl.navigateBack('/tab1');
       } catch (error) {
         this.presentToast('Erro ao tentar salvar');
         this.loading.dismiss();
@@ -62,13 +63,13 @@ export class DetailsPage implements OnInit {
 
       }
     } else {
-      this.product.createdAt = new Date().getTime();
+      this.quarta.createdAt = new Date().getTime();
 
       try {
-        await this.productService.addProduct(this.product);
+        await this.quartaService.addQuarta(this.quarta);
         await this.loading.dismiss();
 
-        this.navCtrl.navigateBack('/home');
+        this.navCtrl.navigateBack('/tab1');
       } catch (error) {
         this.presentToast('Erro ao tentar salvar');
         this.loading.dismiss();

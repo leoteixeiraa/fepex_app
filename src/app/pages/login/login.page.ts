@@ -43,7 +43,40 @@ export class LoginPage implements OnInit {
     try {
       await this.authService.login(this.userLogin);
     } catch (error) {
-      this.presentToast(error.message);
+      console.error(error);
+
+
+
+      let message: string;
+
+      switch (error.code) {
+
+        case 'auth/argument-error':
+          message = "Por favor entre com um Login e Senha!";
+          break;
+
+        case 'auth/email-already-in-use':
+          message = "E-mail está sendo usado, por favor tente outro e-mail";
+          break;
+
+        case 'auth/invalid-email':
+          message = "E-mail inválido";
+          break;
+
+        case 'auth/wrong-password':
+          message = "E-mail ou Senha inválido";
+          break;
+        case 'auth/too-many-requests':
+          message = "E-mail ou Senha inválido";
+          break;
+
+
+        case 'auth/invalid-password':
+          message = "A senha precisa ter pelo menos 6 caracteres";
+          break;
+      }
+      this.presentToast(message);
+
     } finally {
       this.loading.dismiss();
     }
@@ -54,10 +87,22 @@ export class LoginPage implements OnInit {
 
     try {
       await this.authService.register(this.userRegister);
+
     } catch (error) {
+      console.error(error);
+
       let message: string;
 
       switch (error.code) {
+
+        case 'auth/weak-password':
+          message = "A senha precisa ter no mínimo 6 caracteres";
+          break;
+
+        case 'auth/argument-error':
+          message = "Por Favor preencha os campos acima";
+          break;
+
         case 'auth/email-already-in-use':
           message = "E-mail está sendo usado, por favor tente outro e-mail";
           break;
@@ -72,8 +117,8 @@ export class LoginPage implements OnInit {
 
       }
 
-      this.presentToast(message),
-        this.presentToast(error.message); //apagar essa linha para mensagem personalizada 
+      this.presentToast(message);
+      // this.presentToast(error.message); //apagar essa linha para mensagem personalizada 
 
     } finally {
       this.loading.dismiss();

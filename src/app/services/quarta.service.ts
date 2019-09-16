@@ -7,10 +7,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class QuartaService {
-  private quartasCollection: AngularFirestoreCollection<Quarta>; //armazenar referencia na coleção na loja
+  private quartasCollection: AngularFirestoreCollection<Quarta>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
     this.quartasCollection = this.afs.collection<Quarta>('Quartas');
+    ref => ref => ref.orderBy('time_start'); //realizando a consulta por orderBy
+    Eg:
+    this.quartasCollection = this.afs.collection('Quartas', ref => ref.orderBy('time_start')); //retornando dados em order crescente a partir do tempo
+
   }
 
   getQuartas() {
