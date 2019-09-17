@@ -1,0 +1,39 @@
+<!-- details da tab1 -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Sobre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-header">
+    <img [src]="quinta.picture" alt="">
+  </div>
+  <div class="about-info">
+    <h4 class="ion-padding-start">{{quinta.title}}</h4>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Data e Hora</ion-label>
+        <h6>{{quinta.date}}</h6>
+        <h6>{{quinta.time_start}} &mdash; {{quinta.time_end}}</h6>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Local</ion-label>
+        <h6>{{quinta.local}}</h6>
+      </ion-item>
+    </ion-list>
+
+    <p class="ion-padding-start ion-padding-end">
+      {{ quinta.description }}
+    </p>
+  </div>
+</ion-content>

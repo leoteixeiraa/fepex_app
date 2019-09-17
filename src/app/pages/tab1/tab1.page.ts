@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { QuartaService } from 'src/app/services/quarta.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoadingController, ToastController } from '@ionic/angular';
-//teste
+//testea
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -22,7 +22,7 @@ export class Tab1Page {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController
   ) {
-    this.quartasSubscription = this.quartasService.getQuartas().subscribe(data => { //carregar produtos em tempo real      
+    this.quartasSubscription = this.quartasService.getQuartas().subscribe(data => { //carregar itens em tempo real      
       this.quartas = data;
     });
   }

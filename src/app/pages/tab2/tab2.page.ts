@@ -1,16 +1,77 @@
-import { Component, OnInit } from '@angular/core';
-
-
+import { Component } from '@angular/core';
+import { Quinta } from 'src/app/interfaces/quinta';
+import { Subscription } from 'rxjs';
+import { QuintaService } from 'src/app/services/quinta.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { LoadingController, ToastController } from '@ionic/angular';
+//teste
 @Component({
   selector: 'app-tab2',
-  templateUrl: './tab2.page.html',
-  styleUrls: ['./tab2.page.scss'],
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
 })
-export class Tab2Page implements OnInit {
 
-  constructor() { }
+export class Tab2Page {
+  private quintas = new Array<Quinta>();
+  private quintasSubscription: Subscription;
+  private loading: any;
+
+  constructor(
+    private quintasService: QuintaService,
+    private authService: AuthService,
+    private loadingCtrl: LoadingController,
+    private toastCtrl: ToastController
+  ) {
+    this.quintasSubscription = this.quintasService.getQuintas().subscribe(data => { //carregar itens em tempo real      
+      this.quintas = data;
+    });
+  }
 
   ngOnInit() {
+
+  }
+
+  ngOnDestroy() { //destruindo sessão da página
+    this.quintasSubscription.unsubscribe();
+
+  }
+
+  async logout() {
+
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.error(error);
+    } finally {
+    }
+  }
+
+  async deleteQuinta(id: string) {
+    try {
+      await this.quintasService.deleteQuinta(id);
+
+    } catch (error) {
+      this.presentToast('Erro ao tentar apagar');
+    }
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingCtrl.create({ message: 'Por favor, aguarde...' });
+    return this.loading.present();
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+    toast.present();
+
   }
 
 }
+
+
+
+
+
+
+
+

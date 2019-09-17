@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: '../tab2/tab2.module#Tab2PageModule'
       },
       {
+        path: 'tab2/details2',
+        loadChildren: '../details2/details2.module#Details2PageModule'
+      },
+      {
         path: 'tab3',
         loadChildren: '../tab3/tab3.module#Tab3PageModule'
       }
