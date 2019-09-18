@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },
   { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },
   { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
+  { path: 'details3/:id', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule', canActivate: [AuthGuard] },
   { path: 'first-with-tabs', loadChildren: './pages/first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule', canActivate: [AuthGuard] },
   { path: 'second', loadChildren: './pages/second/second.module#SecondPageModule', canActivate: [AuthGuard] },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'premiacao', loadChildren: './pages/premiacao/premiacao.module#PremiacaoPageModule', canActivate: [AuthGuard] },
   { path: 'culturais', loadChildren: './pages/culturais/culturais.module#CulturaisPageModule', canActivate: [AuthGuard] },
   { path: 'details2', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
+  { path: 'details3', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
 ];
 
 

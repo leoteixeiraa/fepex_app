@@ -3,7 +3,7 @@
     <img src="/assets/img/logo2.jpeg">
 
     <ion-segment (ionChange)="segmentChanged($event)" [hidden]="keyboard.isVisible" mode="ios" value="login">
-      <ion-segment-button mode="ios" value="login">
+      <ion-segment-button mode="ios" value="login" [hidden]="keyboard.isVisible">
         <ion-label>Login</ion-label>
       </ion-segment-button>
       <ion-segment-button mode="ios" value="register">
@@ -17,7 +17,8 @@
         <span>Login</span>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email">
+          </ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top" lines="none">

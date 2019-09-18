@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
-    // this.keyboard.isVisible
+    this.keyboard.isVisible
   }
 
   segmentChanged(event: any) {
