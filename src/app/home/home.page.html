@@ -1,80 +1,74 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>FEPEX FRAIBURGO 2019</ion-title>
+    <ion-title>
+      Ionic Truncated Slider
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="!products.length">
-    <!-- Arrays de itens -->
-    <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
-      <ion-avatar slot="start">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </ion-avatar>
-      <ion-label>
-        <h3>
-          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-        </h3>
-        <p>
-          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
-        </p>
-        <p>
-          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-        </p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let product of products">
-      <!--Abrir pagina de detalhes-->
-      <ion-item button [routerLink]="['/details', product.id]">
-        <ion-avatar slot="start">
-          <img [src]="product.picture">
-        </ion-avatar>
+  <h1 class="ion-padding-horizontal ion-padding-top">Hey You 👋,</h1>
 
-        <ion-label>
-          {{ product.name }}
-          <p>{{ product.description }}</p>
-          <p>{{ product.createdAt | date: 'short' }}</p>
-        </ion-label>
+  <!-- options in home.page.ts defining the visible amount of slides -->
+  <ion-slides [options]="slideOptsTop">
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/people?overlay_color=eb7a85&w=600&h=290">
+        <ion-card-header>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/places?overlay_color=3afbec&w=600&h=290">
+        <ion-card-header>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/things?overlay_color=bf27f9&w=600&h=290">
+        <ion-card-header>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 
-        <ion-note color="primary" slot="end" *ngIf="product.price">{{ product.price | currency: 'BRL' }}
-        </ion-note>
-      </ion-item>
+  <h4 class="ion-padding-horizontal">Popular other Cards</h4>
 
-      <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="deleteProduct(product.id)">
-          <ion-icon slot="top" name="trash"></ion-icon>
-          Excluir
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-  <ion-fab vertical="bottom" routerLink="/details" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+  <!-- this is a more narrow, thumb'isch card slider -->
+  <ion-slides [options]="slideOptsThumbs">
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/people?overlay_color=feb75a&w=500&h=300">
+        <ion-card-content>
+          Card Info
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/places?overlay_color=bec3af&w=500&h=300">
+        <ion-card-content>
+          Card Info
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-text-start">
+        <img src="https://placem.at/things?overlay_color=7f9bf2&w=500&h=300">
+        <ion-card-content>
+          Card Info
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6">
-          <ion-button (click)="logout()" color="danger" expand="block">
-            Sair
-          </ion-button>
-        </ion-col>
-
-        <!--
-        <ion-col size="6">
-          <ion-button routerLink="/details" expand="block">
-            Add item
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer> -->

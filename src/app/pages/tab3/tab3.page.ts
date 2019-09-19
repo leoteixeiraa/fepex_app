@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { SextaService } from 'src/app/services/sexta.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoadingController, ToastController } from '@ionic/angular';
+
+
 //teste
 @Component({
   selector: 'app-tab3',
@@ -15,6 +17,7 @@ export class Tab3Page {
   private sextas = new Array<Sexta>();
   private sextasSubscription: Subscription;
   private loading: any;
+  textoBuscar = '';
 
   constructor(
     private sextasServices: SextaService,
@@ -28,6 +31,14 @@ export class Tab3Page {
   }
 
   ngOnInit() {
+
+  }
+
+  filterTab(event) {
+
+    console.log(this.sextas);
+    const texto = event.target.value;
+    this.textoBuscar = texto;
 
   }
 

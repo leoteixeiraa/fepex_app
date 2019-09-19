@@ -28,11 +28,6 @@ export class MenuPage implements OnInit {
       url: '/menu/trabalhos'
     },
     {
-      icon: 'md-map',
-      title: 'Mapa',
-      url: '/menu/mapa'
-    },
-    {
       icon: 'ios-construct',
       title: 'Oficinas',
       url: '/menu/oficinas'

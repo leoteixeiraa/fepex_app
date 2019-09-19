@@ -1,0 +1,39 @@
+<!-- details da tab1 -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Sobre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-info">
+    <h4 class="ion-padding-start">{{trabalho.title}} &mdash; {{trabalho.category}}</h4>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="contact" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Orientadores</ion-label>
+        <h6>{{trabalho.advisors}}</h6>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="contacts" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Autores</ion-label>
+        <h6>{{trabalho.authors}}</h6>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked" color="danger">Local da Apresentação</ion-label>
+        <h6>{{trabalho.local}}</h6>
+      </ion-item>
+    </ion-list>
+    <h4 class="ion-padding-start">Introdução</h4>
+    <p class="ion-padding-start ion-padding-end">
+      {{ trabalho.description }}
+    </p>
+  </div>
+</ion-content>

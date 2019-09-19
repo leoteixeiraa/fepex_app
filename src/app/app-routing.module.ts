@@ -8,22 +8,23 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule), canActivate: [AuthGuard] },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule', canActivate: [LoginGuard] },
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },
-  { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },
-  { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
-  { path: 'details3/:id', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
+  { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },//tab1
+  { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },//tab2
+  { path: 'details3/:id', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },//tab3
+  { path: 'details-trab/:id', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },//trabalhos
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule', canActivate: [AuthGuard] },
   { path: 'first-with-tabs', loadChildren: './pages/first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule', canActivate: [AuthGuard] },
   { path: 'second', loadChildren: './pages/second/second.module#SecondPageModule', canActivate: [AuthGuard] },
   { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule', canActivate: [AuthGuard] },
   { path: 'tab2', loadChildren: './pages/tab2/tab2.module#Tab2PageModule', canActivate: [AuthGuard] },
   { path: 'tab3', loadChildren: './pages/tab3/tab3.module#Tab3PageModule', canActivate: [AuthGuard] },
-  { path: 'mapa', loadChildren: './pages/mapa/mapa.module#MapaPageModule', canActivate: [AuthGuard] },
   { path: 'oficinas', loadChildren: './pages/oficinas/oficinas.module#OficinasPageModule', canActivate: [AuthGuard] },
   { path: 'trabalhos', loadChildren: './pages/trabalhos/trabalhos.module#TrabalhosPageModule', canActivate: [AuthGuard] },
   { path: 'premiacao', loadChildren: './pages/premiacao/premiacao.module#PremiacaoPageModule', canActivate: [AuthGuard] },
   { path: 'culturais', loadChildren: './pages/culturais/culturais.module#CulturaisPageModule', canActivate: [AuthGuard] },
   { path: 'details2', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
   { path: 'details3', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
+  { path: 'details-trab', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
 ];
 
 

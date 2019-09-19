@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { TrabalhosPage } from './trabalhos.page';
-
+import { PipesModule } from 'src/app/pipes/pipes.module';
+//
 const routes: Routes = [
   {
     path: '',
@@ -16,6 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    PipesModule,
     CommonModule,
     FormsModule,
     IonicModule,
@@ -23,4 +25,4 @@ const routes: Routes = [
   ],
   declarations: [TrabalhosPage]
 })
-export class TrabalhosPageModule {}
+export class TrabalhosPageModule { }
