@@ -8,12 +8,6 @@
     <ion-title>Sexta-Feira</ion-title>
 
   </ion-toolbar>
-  <ion-toolbar color="primary">
-
-    <ion-searchbar (ionChange)="filterTab( $event )" placeholder="Buscar" animated>
-
-    </ion-searchbar>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -38,7 +32,7 @@
   </ion-list>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let sexta of sextas | filtro:textoBuscar">
+    <ion-item-sliding *ngFor="let sexta of sextas">
       <!--Abrir pagina de detalhes-->
       <ion-item button [routerLink]="['/details3', sexta.id]">
 
