@@ -13,6 +13,7 @@ export interface Oficina {
     advisors?: string; //orientadores
     local?: string;
     observation?: string;
+    subscribed?: string;
     createdAt?: number;
     userId?: string;
 }

@@ -31,6 +31,10 @@ const routes: Routes = [
         loadChildren: '../oficinas/oficinas.module#OficinasPageModule'
       },
       {
+        path: 'orais',
+        loadChildren: '../orais/orais.module#OraisPageModule'
+      },
+      {
         path: 'premiacao',
         loadChildren: '../premiacao/premiacao.module#PremiacaoPageModule'
       },

@@ -24,18 +24,23 @@ export class MenuPage implements OnInit {
     },
     {
       icon: 'md-document',
-      title: 'Trabalhos',
+      title: 'Apresentações de Banner',
       url: '/menu/trabalhos'
     },
     {
-      icon: 'ios-construct',
-      title: 'Oficinas',
-      url: '/menu/oficinas'
+      icon: 'body',
+      title: 'Apresentações Orais',
+      url: '/menu/orais'
     },
     {
       icon: 'md-happy',
       title: 'Apresentações Culturais',
       url: '/menu/culturais'
+    },
+    {
+      icon: 'ios-construct',
+      title: 'Oficinas',
+      url: '/menu/oficinas'
     },
     {
       icon: 'md-trophy',

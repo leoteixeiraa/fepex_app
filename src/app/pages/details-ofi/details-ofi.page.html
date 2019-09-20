@@ -1,0 +1,66 @@
+<!-- details da tab1 -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{oficina.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-header">
+    <img [src]="oficina.picture" alt="">
+  </div>
+  <div class="about-info">
+    <h4 class="ion-padding-start">{{oficina.title}}</h4>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Data e Hora</ion-label>
+        <h6>{{oficina.date}}</h6>
+        <h6>{{oficina.time_start}} &mdash; {{oficina.time_end}}</h6>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Local</ion-label>
+        <h6>{{oficina.local}}</h6>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="happy" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Ministrante</ion-label>
+        <h6>{{oficina.advisors}}</h6>
+      </ion-item>,
+
+      <ion-item>
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Total de Vagas</ion-label>
+        <h6>{{oficina.vacancies}}</h6>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="clipboard" slot="start"></ion-icon>
+        <ion-label position="stacked" color="danger">Status</ion-label>
+        <h6>{{oficina.status}}</h6>
+      </ion-item>
+
+    </ion-list>
+
+
+
+    <h4 class="ion-padding-start">Descrição</h4>
+    <p class="ion-padding-start ion-padding-end">
+      {{ oficina.description }}
+    </p>
+
+    <h4 class="ion-padding-start">Inscritos</h4>
+    <p class="ion-padding-start ion-padding-end">
+      {{ oficina.subscribed }}
+    </p>
+  </div>
+</ion-content>

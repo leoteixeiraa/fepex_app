@@ -4,6 +4,7 @@ export interface Trabalho {
     authors?: string;
     description?: string;
     category?: string;
+    adivisors?: string;
     advisors?: string; //orientadores
     local?: string;
     observation?: string;
