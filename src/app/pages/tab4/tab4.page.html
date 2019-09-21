@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Quarta-Feira</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-list *ngIf="!quartas.length">
+     Arrays de itens
+<ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
+  <ion-avatar slot="start">
+    <ion-skeleton-text animated></ion-skeleton-text>
+  </ion-avatar>
+  <ion-label>
+    <h3>
+      <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+    </h3>
+    <p>
+      <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+    </p>
+    <p>
+      <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+    </p>
+  </ion-label>
+</ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let quarta of quartas">
+   Abrir pagina de detalhes
+    <ion-item button [routerLink]="['/details', quarta.id]">
+
+
+
+      <ion-label>
+        {{ quarta.title }}
+        <p>{{ quarta.short_description }}</p>
+        <ion-note color="danger">{{quarta.local}}</ion-note>
+      </ion-label>
+
+      <ion-note color="primary" slot="end" *ngIf="quarta.local">{{quarta.time_start}}
+       &mdash; {{quarta.time_end}
+      </ion-note>
+    </ion-item> 
+
+
+    <ion-content padding>
+
+    <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
+    Details forward
+  </ion-button> 
+
+    </ion-content> -->

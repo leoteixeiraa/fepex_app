@@ -13,7 +13,7 @@ const routes: Routes = [
     component: FirstWithTabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'tab1', //programação geral de quarta feira
         loadChildren: '../tab1/tab1.module#Tab1PageModule'
       },
       {
@@ -21,7 +21,7 @@ const routes: Routes = [
         loadChildren: '../details/details.module#DetailsPageModule'
       },
       {
-        path: 'tab2',
+        path: 'tab2', //programação geral de quinta-feira
         loadChildren: '../tab2/tab2.module#Tab2PageModule'
       },
       {
@@ -29,7 +29,7 @@ const routes: Routes = [
         loadChildren: '../details2/details2.module#Details2PageModule'
       },
       {
-        path: 'tab3',
+        path: 'tab3', //programação geral de sexta-feira
         loadChildren: '../tab3/tab3.module#Tab3PageModule'
       },
       {

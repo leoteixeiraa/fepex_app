@@ -32,7 +32,7 @@ const routes: Routes = [
       },
       {
         path: 'orais',
-        loadChildren: '../orais/orais.module#OraisPageModule'
+        loadChildren: '../first-with-tabs2/first-with-tabs2.module#FirstWithTabs2PageModule'
       },
       {
         path: 'premiacao',

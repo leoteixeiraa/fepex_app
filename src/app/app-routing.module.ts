@@ -27,7 +27,11 @@ const routes: Routes = [
   { path: 'details3', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
   { path: 'details-trab', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },
-  { path: 'orais', loadChildren: './pages/orais/orais.module#OraisPageModule' },
+  { path: 'orais', loadChildren: './pages/orais/orais.module#OraisPageModule', canActivate: [AuthGuard] },
+  { path: 'first-with-tabs2', loadChildren: './pages/first-with-tabs2/first-with-tabs2.module#FirstWithTabs2PageModule', canActivate: [AuthGuard] },
+  { path: 'tab4', loadChildren: './pages/tab4/tab4.module#Tab4PageModule', canActivate: [AuthGuard] },
+  { path: 'tab5', loadChildren: './pages/tab5/tab5.module#Tab5PageModule', canActivate: [AuthGuard] },
+  { path: 'tab6', loadChildren: './pages/tab6/tab6.module#Tab6PageModule', canActivate: [AuthGuard] },
 ];
 
 

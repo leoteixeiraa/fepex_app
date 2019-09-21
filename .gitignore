@@ -22,6 +22,8 @@ coverage/
 www/
 dist/
 node_modules/
+/src/environments
+/environments
 tmp/
 temp/
 platforms/
