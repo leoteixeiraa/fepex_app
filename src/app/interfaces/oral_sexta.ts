@@ -1,5 +1,4 @@
-//PROGRAMAÇÂO DE QUINTA*********
-export interface Oral_quarta {
+export interface Oral_sexta {
     id?: string;
     title?: string;
     authors?: string;
@@ -9,7 +8,9 @@ export interface Oral_quarta {
     description?: string;
     date?: string;
     local?: string;
+    presentation_type?: string; //tipo de apresentação
     short_description?: string;
+    time?: string;
     observation?: string;
     createdAt?: number;
     userId?: string;

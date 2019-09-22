@@ -9,10 +9,19 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule', canActivate: [LoginGuard] },
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },
   { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },//tab1
-  { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },//tab2
+  { path: 'details2/', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
+  { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
+  { path: 'details3/', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
   { path: 'details3/:id', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },//tab3
-  { path: 'details4/:id', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },//tab4
+  { path: 'details4/', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },//tab4
+  { path: 'details4/:id', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },
+  { path: 'details5/', loadChildren: './pages/details5/details5.module#Details5PageModule', canActivate: [AuthGuard] },//tab4
+  { path: 'details5/:id', loadChildren: './pages/details5/details5.module#Details5PageModule', canActivate: [AuthGuard] },//tab5
+  { path: 'details6/', loadChildren: './pages/details6/details6.module#Details6PageModule', canActivate: [AuthGuard] },//tab4
+  { path: 'details6/:id', loadChildren: './pages/details6/details6.module#Details6PageModule', canActivate: [AuthGuard] },//tab5
+  { path: 'details-trab/', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-trab/:id', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
+  { path: 'details-ofi/', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },//trabalhos
   { path: 'details-ofi/:id', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },//trabalhos
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule', canActivate: [AuthGuard] },
   { path: 'first-with-tabs', loadChildren: './pages/first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule', canActivate: [AuthGuard] },
@@ -33,6 +42,9 @@ const routes: Routes = [
   { path: 'tab5', loadChildren: './pages/tab5/tab5.module#Tab5PageModule', canActivate: [AuthGuard] },
   { path: 'tab6', loadChildren: './pages/tab6/tab6.module#Tab6PageModule', canActivate: [AuthGuard] },
   { path: 'details4', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },
+  { path: 'details5', loadChildren: './pages/details5/details5.module#Details5PageModule', canActivate: [AuthGuard] },
+  { path: 'first-with-tabs3', loadChildren: './pages/first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule' },
+  { path: 'details6', loadChildren: './pages/details6/details6.module#Details6PageModule' },
 ];
 
 

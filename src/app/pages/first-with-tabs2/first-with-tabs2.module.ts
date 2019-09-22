@@ -22,11 +22,11 @@ const routes: Routes = [
       },
       {
         path: 'tab5', //programação oral de sexta
-        loadChildren: '../tab4/tab4.module#Tab4PageModule'
+        loadChildren: '../tab5/tab5.module#Tab5PageModule'
       },
       {
         path: 'tab5/details',
-        loadChildren: '../details4/details4.module#Details4PageModule'
+        loadChildren: '../details5/details5.module#Details5PageModule'
       },
     ]
   },

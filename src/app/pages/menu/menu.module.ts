@@ -40,7 +40,7 @@ const routes: Routes = [
       },
       {
         path: 'culturais',
-        loadChildren: '../culturais/culturais.module#CulturaisPageModule'
+        loadChildren: '../first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule'
       }
     ]
   }

@@ -1,15 +1,13 @@
-//PROGRAMAÇÂO DE QUINTA*********
-export interface Oral_quarta {
+export interface Cultural_quarta {
     id?: string;
     title?: string;
     authors?: string;
-    advisors?: string; //orientadores
-    time_start?: string;
-    time_end?: string;
-    description?: string;
     date?: string;
     local?: string;
+    type?: string; //tipo de apresentação
     short_description?: string;
+    time?: string;
+    order?: string;
     observation?: string;
     createdAt?: number;
     userId?: string;

@@ -1,9 +1,57 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tab5</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sexta-feira</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list *ngIf="!oralsextas.length">
+    <!-- Arrays de itens -->
+    <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-</ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let oralsexta of oralsextas">
+      <!--Abrir pagina de detalhes-->
+      <ion-item button [routerLink]="['/details5', oralsexta.id]">
+
+
+
+        <ion-label>
+          {{ oralsexta.title }}
+          <p>{{ oralsexta.short_description }}</p>
+          <ion-note color="danger">{{oralsexta.local}}</ion-note>
+        </ion-label>
+
+        <ion-note color="primary" slot="end" *ngIf="oralsexta.local">{{oralsexta.time_start}}
+          <!-- &mdash; {{oralsexta.time_end}}-->
+        </ion-note>
+      </ion-item>
+
+
+      <ion-content padding>
+
+        <!-- <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
+    Details forward
+  </ion-button> -->
+
+      </ion-content>

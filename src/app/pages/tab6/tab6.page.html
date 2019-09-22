@@ -1,9 +1,57 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tab6</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Quarta-feira</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list *ngIf="!culturalquartas.length">
+    <!-- Arrays de itens -->
+    <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-</ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let culturalquarta of culturalquartas">
+      <!--Abrir pagina de detalhes-->
+      <ion-item button [routerLink]="['/details6', culturalquarta.id]">
+
+
+
+        <ion-label>
+          {{ culturalquarta.title }}
+          <p>{{ culturalquarta.type }}</p>
+          <ion-note color="danger">{{culturalquarta.time}}</ion-note>
+        </ion-label>
+
+        <ion-note color="primary" slot="end" *ngIf="culturalquarta.local">{{culturalquarta.order}}
+          <!-- &mdash; {{culturalquarta.time_end}}-->
+        </ion-note>
+      </ion-item>
+
+
+      <ion-content padding>
+
+        <!-- <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
+    Details forward
+  </ion-button> -->
+
+      </ion-content>
