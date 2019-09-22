@@ -11,6 +11,7 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+environments
 
 .idea/
 .ionic/
@@ -24,7 +25,9 @@ dist/
 node_modules/
 /src/environments
 /environments
+src/environments/environment.ts
 tmp/
+environment.ts
 temp/
 platforms/
 plugins/
@@ -35,3 +38,5 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+environment.ts
+src/environments/environment.ts

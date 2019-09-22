@@ -13,12 +13,20 @@ const routes: Routes = [
     component: FirstWithTabs2Page,
     children: [
       {
-        path: 'tab4', //programação geral de quarta feira
+        path: 'tab4', //programação oral de quinta
         loadChildren: '../tab4/tab4.module#Tab4PageModule'
       },
       {
         path: 'tab4/details',
-        loadChildren: '../details3/details3.module#Details3PageModule'
+        loadChildren: '../details4/details4.module#Details4PageModule'
+      },
+      {
+        path: 'tab5', //programação oral de sexta
+        loadChildren: '../tab4/tab4.module#Tab4PageModule'
+      },
+      {
+        path: 'tab5/details',
+        loadChildren: '../details4/details4.module#Details4PageModule'
       },
     ]
   },

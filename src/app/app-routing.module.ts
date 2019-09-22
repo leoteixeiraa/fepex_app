@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'details/:id', loadChildren: './pages/details/details.module#DetailsPageModule', canActivate: [AuthGuard] },//tab1
   { path: 'details2/:id', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },//tab2
   { path: 'details3/:id', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },//tab3
+  { path: 'details4/:id', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },//tab4
   { path: 'details-trab/:id', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi/:id', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },//trabalhos
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule', canActivate: [AuthGuard] },
@@ -27,11 +28,11 @@ const routes: Routes = [
   { path: 'details3', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
   { path: 'details-trab', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },
-  { path: 'orais', loadChildren: './pages/orais/orais.module#OraisPageModule', canActivate: [AuthGuard] },
   { path: 'first-with-tabs2', loadChildren: './pages/first-with-tabs2/first-with-tabs2.module#FirstWithTabs2PageModule', canActivate: [AuthGuard] },
   { path: 'tab4', loadChildren: './pages/tab4/tab4.module#Tab4PageModule', canActivate: [AuthGuard] },
   { path: 'tab5', loadChildren: './pages/tab5/tab5.module#Tab5PageModule', canActivate: [AuthGuard] },
   { path: 'tab6', loadChildren: './pages/tab6/tab6.module#Tab6PageModule', canActivate: [AuthGuard] },
+  { path: 'details4', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },
 ];
 
 
