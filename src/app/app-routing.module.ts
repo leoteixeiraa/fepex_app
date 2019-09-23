@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'details6/:id', loadChildren: './pages/details6/details6.module#Details6PageModule', canActivate: [AuthGuard] },//tab5
   { path: 'details7/:id', loadChildren: './pages/details7/details7.module#Details7PageModule', canActivate: [AuthGuard] },//tab7
   { path: 'details8/:id', loadChildren: './pages/details8/details8.module#Details8PageModule', canActivate: [AuthGuard] },//tab8
+  { path: 'details9/:id', loadChildren: './pages/details9/details9.module#Details9PageModule', canActivate: [AuthGuard] },//noticia
   { path: 'details-trab/', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-trab/:id', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi/', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },//trabalhos
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'details7', loadChildren: './pages/details7/details7.module#Details7PageModule', canActivate: [AuthGuard] },
   { path: 'tab8', loadChildren: './pages/tab8/tab8.module#Tab8PageModule', canActivate: [AuthGuard] },
   { path: 'details8', loadChildren: './pages/details8/details8.module#Details8PageModule', canActivate: [AuthGuard] },
+  { path: 'details9', loadChildren: './pages/details9/details9.module#Details9PageModule', canActivate: [AuthGuard] },
 ];
 
 
