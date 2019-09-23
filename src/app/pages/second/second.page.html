@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header #header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,8 +7,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-button expand="block" routerLink="/menu/second/details" routerDirection="forward">
-    Adicionar noticia
-  </ion-button>
+<ion-content scrollEvents="true" appHideHeader [header]="header">
+  <ion-card>
+    <img src="http://noticias.fraiburgo.ifc.edu.br/wp-content/uploads/sites/6/2016/10/21.jpg" alt="">
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta deserunt non molestiae mollitia possimus nihil
+      pariatur, esse ad nam adipisci error deleniti amet odit hic, quisquam assumenda natus culpa? Perspiciatis?
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card>
+    <img src="http://noticias.fraiburgo.ifc.edu.br/wp-content/uploads/sites/6/2016/10/21.jpg" alt="">
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta deserunt non molestiae mollitia possimus nihil
+      pariatur, esse ad nam adipisci error deleniti amet odit hic, quisquam assumenda natus culpa? Perspiciatis?
+    </ion-card-content>
+
+  </ion-card>
+  <ion-card>
+    <img src="http://noticias.fraiburgo.ifc.edu.br/wp-content/uploads/sites/6/2016/10/21.jpg" alt="">
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta deserunt non molestiae mollitia possimus nihil
+      pariatur, esse ad nam adipisci error deleniti amet odit hic, quisquam assumenda natus culpa? Perspiciatis?
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+  <ion-fab vertical="bottom" routerLink="/details" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

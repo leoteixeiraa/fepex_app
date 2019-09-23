@@ -34,10 +34,10 @@ const routes: Routes = [
         path: 'orais',
         loadChildren: '../first-with-tabs2/first-with-tabs2.module#FirstWithTabs2PageModule'
       },
-      {
-        path: 'premiacao',
-        loadChildren: '../premiacao/premiacao.module#PremiacaoPageModule'
-      },
+      // {
+      //   path: 'premiacao',
+      //   loadChildren: '../premiacao/premiacao.module#PremiacaoPageModule'
+      // },
       {
         path: 'culturais',
         loadChildren: '../first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule'

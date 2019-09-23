@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SecondPage } from './second.page';
+import { HideHeaderDirective } from 'src/app/directives/hide-header.directive';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SecondPage]
+  declarations: [SecondPage, HideHeaderDirective]
 })
-export class SecondPageModule {}
+export class SecondPageModule { }

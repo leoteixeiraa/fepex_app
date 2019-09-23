@@ -41,12 +41,12 @@ export class MenuPage implements OnInit {
       icon: 'ios-construct',
       title: 'Oficinas',
       url: '/menu/oficinas'
-    },
-    {
-      icon: 'md-trophy',
-      title: 'Premiações',
-      url: '/menu/premiacao'
     }
+    // {
+    //   icon: 'md-trophy',
+    //   title: 'Premiações',
+    //   url: '/menu/premiacao'
+    // }
   ];
 
   constructor(private authService: AuthService,
