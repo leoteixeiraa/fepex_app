@@ -20,6 +20,22 @@ const routes: Routes = [
         path: 'tab6/details',
         loadChildren: '../details6/details6.module#Details6PageModule'
       },
+      {
+        path: 'tab7', //programação cultural de quinta
+        loadChildren: '../tab7/tab7.module#Tab7PageModule'
+      },
+      {
+        path: 'tab7/details',
+        loadChildren: '../details7/details7.module#Details7PageModule'
+      },
+      {
+        path: 'tab8', //programação cultural de quinta
+        loadChildren: '../tab8/tab8.module#Tab8PageModule'
+      },
+      {
+        path: 'tab8/details',
+        loadChildren: '../details8/details8.module#Details8PageModule'
+      },
     ]
   },
   {

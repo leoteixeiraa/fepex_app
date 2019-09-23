@@ -70,6 +70,9 @@ export class LoginPage implements OnInit {
           message = "E-mail ou Senha inválido";
           break;
 
+        case 'auth/user-not-found':
+          message = "Usuário não encontrado";
+          break;
 
         case 'auth/invalid-password':
           message = "A senha precisa ter pelo menos 6 caracteres";

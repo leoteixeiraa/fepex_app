@@ -19,6 +19,8 @@ const routes: Routes = [
   { path: 'details5/:id', loadChildren: './pages/details5/details5.module#Details5PageModule', canActivate: [AuthGuard] },//tab5
   { path: 'details6/', loadChildren: './pages/details6/details6.module#Details6PageModule', canActivate: [AuthGuard] },//tab4
   { path: 'details6/:id', loadChildren: './pages/details6/details6.module#Details6PageModule', canActivate: [AuthGuard] },//tab5
+  { path: 'details7/:id', loadChildren: './pages/details7/details7.module#Details7PageModule', canActivate: [AuthGuard] },//tab7
+  { path: 'details8/:id', loadChildren: './pages/details8/details8.module#Details8PageModule', canActivate: [AuthGuard] },//tab8
   { path: 'details-trab/', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-trab/:id', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi/', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },//trabalhos
@@ -33,8 +35,6 @@ const routes: Routes = [
   { path: 'trabalhos', loadChildren: './pages/trabalhos/trabalhos.module#TrabalhosPageModule', canActivate: [AuthGuard] },
   { path: 'premiacao', loadChildren: './pages/premiacao/premiacao.module#PremiacaoPageModule', canActivate: [AuthGuard] },
   { path: 'culturais', loadChildren: './pages/culturais/culturais.module#CulturaisPageModule', canActivate: [AuthGuard] },
-  { path: 'details2', loadChildren: './pages/details2/details2.module#Details2PageModule', canActivate: [AuthGuard] },
-  { path: 'details3', loadChildren: './pages/details3/details3.module#Details3PageModule', canActivate: [AuthGuard] },
   { path: 'details-trab', loadChildren: './pages/details-trab/details-trab.module#DetailsTrabPageModule', canActivate: [AuthGuard] },
   { path: 'details-ofi', loadChildren: './pages/details-ofi/details-ofi.module#DetailsOfiPageModule', canActivate: [AuthGuard] },
   { path: 'first-with-tabs2', loadChildren: './pages/first-with-tabs2/first-with-tabs2.module#FirstWithTabs2PageModule', canActivate: [AuthGuard] },
@@ -43,8 +43,11 @@ const routes: Routes = [
   { path: 'tab6', loadChildren: './pages/tab6/tab6.module#Tab6PageModule', canActivate: [AuthGuard] },
   { path: 'details4', loadChildren: './pages/details4/details4.module#Details4PageModule', canActivate: [AuthGuard] },
   { path: 'details5', loadChildren: './pages/details5/details5.module#Details5PageModule', canActivate: [AuthGuard] },
-  { path: 'first-with-tabs3', loadChildren: './pages/first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule' },
-  { path: 'details6', loadChildren: './pages/details6/details6.module#Details6PageModule' },
+  { path: 'first-with-tabs3', loadChildren: './pages/first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule', canActivate: [AuthGuard] },
+  { path: 'tab7', loadChildren: './pages/tab7/tab7.module#Tab7PageModule', canActivate: [AuthGuard] },
+  { path: 'details7', loadChildren: './pages/details7/details7.module#Details7PageModule', canActivate: [AuthGuard] },
+  { path: 'tab8', loadChildren: './pages/tab8/tab8.module#Tab8PageModule', canActivate: [AuthGuard] },
+  { path: 'details8', loadChildren: './pages/details8/details8.module#Details8PageModule', canActivate: [AuthGuard] },
 ];
 
 
