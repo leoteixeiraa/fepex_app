@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { SecondService } from 'src/app/services/second.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-second',
@@ -15,8 +17,12 @@ export class SecondPage {
   private secondsSubscription: Subscription;
   private loading: any;
   textoBuscar = '';
+  public user: any = {};
+  private userSubscription: Subscription;
 
   constructor(
+    private afa: AngularFireAuth,
+    private afs: AngularFirestore,
     private secondsServices: SecondService,
     private authService: AuthService,
     private loadingCtrl: LoadingController,
@@ -40,8 +46,28 @@ export class SecondPage {
   }
 
   ngOnDestroy() { //destruindo sessão da página
+    if (this.userSubscription) this.userSubscription.unsubscribe();
+
     this.secondsSubscription.unsubscribe();
 
+  }
+  async login() {
+
+    try {
+
+      this.loadUser();
+      console.log(this.loadUser);
+
+    } catch (error) {
+      console.error(error);
+    } finally {
+    }
+  }
+
+  loadUser() {
+    this.userSubscription = this.afs.collection('Users').doc(this.afa.auth.currentUser.uid).valueChanges().subscribe(data => {
+      if (data) this.user = data;
+    });
   }
 
   async logout() {
@@ -59,7 +85,7 @@ export class SecondPage {
       await this.secondsServices.deleteSecond(id);
 
     } catch (error) {
-      this.presentToast('Erro ao tentar apagar');
+      this.presentToast('Você não tem permissão para isso!');
     }
   }
 

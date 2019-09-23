@@ -57,7 +57,7 @@ export class Details9Page implements OnInit {
 
         this.navCtrl.navigateBack('/second');
       } catch (error) {
-        this.presentToast('Erro ao tentar salvar');
+        this.presentToast('Você não tem permissão para isso! Procure a Coodernação de Pesquisa do Campus');
         this.loading.dismiss();
         console.error(error);
 
@@ -71,7 +71,7 @@ export class Details9Page implements OnInit {
 
         this.navCtrl.navigateBack('/second');
       } catch (error) {
-        this.presentToast('Erro ao tentar salvar');
+        this.presentToast('Você não tem permissão para isso! Procure a Coodernação de Pesquisa do Campus');
         this.loading.dismiss();
       }
     }
