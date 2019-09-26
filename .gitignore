@@ -28,6 +28,7 @@ node_modules/
 src/environments/environment.ts
 tmp/
 environment.ts
+node_modules/
 temp/
 platforms/
 plugins/
