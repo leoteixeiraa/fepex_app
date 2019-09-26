@@ -23,9 +23,7 @@ export class LoginPage implements OnInit {
     private toastCtrl: ToastController,
     private authService: AuthService) { }
 
-  ngOnInit() {
-    this.keyboard.isVisible
-  }
+  ngOnInit() { }
 
   segmentChanged(event: any) {
     if (event.detail.value == "login") {
