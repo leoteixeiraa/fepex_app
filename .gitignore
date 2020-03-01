@@ -25,7 +25,7 @@ dist/
 node_modules/
 /src/environments
 /environments
-src/environments/environment.ts
+/src/environments/environment.ts
 tmp/
 environment.ts
 node_modules/
