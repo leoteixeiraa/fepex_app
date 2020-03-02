@@ -1,6 +1,4 @@
-# Sistema Único do CINCATARINA
-
-# Gestão e controle de energia
+# FEPEX APP
 
 Aplicativo mobile que tem como funcionalidades toda programação dos três dias de evento EM TEMPO REAL, como também trabalhos e locais das presentações de cada banner, apresentações orais e culturais. Inscritos e descrição das oficinas ofertadas. Pagina de Noticias e fotos publicadas o tempo todo durante o evento. 
 
@@ -26,6 +24,10 @@ Aplicativo mobile que tem como funcionalidades toda programação dos três dias
 
 * JavaScipt
 * TypeScript
+
+### PlayStore
+
+O aplicativo .apk se encontra disponível para download na playstore. Acesse: (<https://play.google.com/store/apps/details?id=pesquisa.fepex.app.fraiburgo&hl=pt_BR/>)
 
 
 ## Instalação e Configuração
