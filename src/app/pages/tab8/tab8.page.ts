@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cultural_sexta } from 'src/app/interfaces/cultural_sexta';
+import { Cultural } from 'src/app/interfaces/cultural';
 import { Subscription } from 'rxjs';
 import { CulturalSextaService } from 'src/app/services/cultural-sexta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab8Page {
-  private culturalsextas = new Array<Cultural_sexta>();
+  private culturalsextas = new Array<Cultural>();
   private cultural_sextasSubscription: Subscription;
   private loading: any;
   textoBuscar = '';

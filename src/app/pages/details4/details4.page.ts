@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Oral_quarta } from 'src/app/interfaces/oral_quarta';
+import { Oral } from 'src/app/interfaces/oral';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { OralQuartaService } from 'src/app/services/oral-quarta.service';
   styleUrls: ['./details4.page.scss'],
 })
 export class Details4Page implements OnInit {
-  private oralquarta: Oral_quarta = {};
+  private oralquarta: Oral = {};
   private loading: any;
   private oralquartasId: string = null;
   private oral_quartaSubscription: Subscription;

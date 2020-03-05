@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Quinta } from 'src/app/interfaces/quinta';
+import { DiaSemana } from 'src/app/interfaces/dia_semana';
 import { Subscription } from 'rxjs';
 import { QuintaService } from 'src/app/services/quinta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,7 +12,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab2Page {
-  private quintas = new Array<Quinta>();
+  private quintas = new Array<DiaSemana>();
   private quintasSubscription: Subscription;
   private loading: any;
 

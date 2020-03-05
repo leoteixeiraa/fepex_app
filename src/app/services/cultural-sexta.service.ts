@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Cultural_sexta } from '../interfaces/cultural_sexta';
+import { Cultural } from '../interfaces/cultural';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CulturalSextaService {
-  private cultural_sextasCollection: AngularFirestoreCollection<Cultural_sexta>; //armazenar referencia da coleção
+  private cultural_sextasCollection: AngularFirestoreCollection<Cultural>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.cultural_sextasCollection = this.afs.collection<Cultural_sexta>('CulturalSextas');
+    this.cultural_sextasCollection = this.afs.collection<Cultural>('CulturalSextas');
     ref => ref => ref.orderBy('order'); //realizando a consulta por orderBy
     Eg:
     this.cultural_sextasCollection = this.afs.collection('CulturalSextas', ref => ref.orderBy('order')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class CulturalSextaService {
     )
   }
 
-  addCulturalSexta(cultural_sexta: Cultural_sexta) {
+  addCulturalSexta(cultural_sexta: Cultural) {
     return this.cultural_sextasCollection.add(cultural_sexta);
   }
 
   getCulturalSexta(id: string) { //pegar item especifico pelo id
-    return this.cultural_sextasCollection.doc<Cultural_sexta>(id).valueChanges();
+    return this.cultural_sextasCollection.doc<Cultural>(id).valueChanges();
 
   }
 
-  updateCulturalSexta(id: string, cultural_sexta: Cultural_sexta) {
-    return this.cultural_sextasCollection.doc<Cultural_sexta>(id).update(cultural_sexta);
+  updateCulturalSexta(id: string, cultural_sexta: Cultural) {
+    return this.cultural_sextasCollection.doc<Cultural>(id).update(cultural_sexta);
 
   }
   deleteCulturalSexta(id: string) {

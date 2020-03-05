@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Cultural_quarta } from '../interfaces/cultural_quarta';
+import { Cultural } from '../interfaces/cultural';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CulturalQuartaService {
-  private cultural_quartasCollection: AngularFirestoreCollection<Cultural_quarta>; //armazenar referencia da coleção
+  private cultural_quartasCollection: AngularFirestoreCollection<Cultural>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.cultural_quartasCollection = this.afs.collection<Cultural_quarta>('CulturalQuartas');
+    this.cultural_quartasCollection = this.afs.collection<Cultural>('CulturalQuartas');
     ref => ref => ref.orderBy('order'); //realizando a consulta por orderBy
     Eg:
     this.cultural_quartasCollection = this.afs.collection('CulturalQuartas', ref => ref.orderBy('order')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class CulturalQuartaService {
     )
   }
 
-  addCulturalQuarta(cultural_quarta: Cultural_quarta) {
+  addCulturalQuarta(cultural_quarta: Cultural) {
     return this.cultural_quartasCollection.add(cultural_quarta);
   }
 
   getCulturalQuarta(id: string) { //pegar item especifico pelo id
-    return this.cultural_quartasCollection.doc<Cultural_quarta>(id).valueChanges();
+    return this.cultural_quartasCollection.doc<Cultural>(id).valueChanges();
 
   }
 
-  updateCulturalQuarta(id: string, cultural_quarta: Cultural_quarta) {
-    return this.cultural_quartasCollection.doc<Cultural_quarta>(id).update(cultural_quarta);
+  updateCulturalQuarta(id: string, cultural_quarta: Cultural) {
+    return this.cultural_quartasCollection.doc<Cultural>(id).update(cultural_quarta);
 
   }
   deleteCulturalQuarta(id: string) {

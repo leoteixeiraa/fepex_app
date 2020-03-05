@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Oral_sexta } from 'src/app/interfaces/oral_sexta';
+import { Oral } from 'src/app/interfaces/oral';
 import { Subscription } from 'rxjs';
 import { OralSextaService } from 'src/app/services/oral-sexta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab5Page {
-  private oralsextas = new Array<Oral_sexta>();
+  private oralsextas = new Array<Oral>();
   private oral_sextasSubscription: Subscription;
   private loading: any;
   textoBuscar = '';

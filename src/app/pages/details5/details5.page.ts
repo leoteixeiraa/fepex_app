@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Oral_sexta } from 'src/app/interfaces/oral_sexta';
+import { Oral } from 'src/app/interfaces/oral';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { OralSextaService } from 'src/app/services/oral-sexta.service';
   styleUrls: ['./details5.page.scss'],
 })
 export class Details5Page implements OnInit {
-  private oralsexta: Oral_sexta = {};
+  private oralsexta: Oral = {};
   private loading: any;
   private oralsextasId: string = null;
   private oral_sextaSubscription: Subscription;

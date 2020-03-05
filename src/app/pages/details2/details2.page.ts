@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quinta } from 'src/app/interfaces/quinta';
+import { DiaSemana } from 'src/app/interfaces/dia_semana';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { QuintaService } from 'src/app/services/quinta.service';
   styleUrls: ['./details2.page.scss'],
 })
 export class Details2Page implements OnInit {
-  private quinta: Quinta = {};
+  private quinta: DiaSemana = {};
   private loading: any;
   private quintaId: string = null;
   private quintaSubscription: Subscription;

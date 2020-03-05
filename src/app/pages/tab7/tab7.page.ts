@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cultural_quinta } from 'src/app/interfaces/cultural_quinta';
+import { Cultural } from 'src/app/interfaces/cultural';
 import { Subscription } from 'rxjs';
 import { CulturalQuintaService } from 'src/app/services/cultural-quinta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab7Page {
-  private culturalquintas = new Array<Cultural_quinta>();
+  private culturalquintas = new Array<Cultural>();
   private cultural_quintasSubscription: Subscription;
   private loading: any;
   textoBuscar = '';

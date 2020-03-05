@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Quarta } from 'src/app/interfaces/quarta';
+import { DiaSemana } from 'src/app/interfaces/dia_semana';
 import { Subscription } from 'rxjs';
 import { QuartaService } from 'src/app/services/quarta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,7 +12,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab1Page {
-  private quartas = new Array<Quarta>();
+  private quartas = new Array<DiaSemana>();
   private quartasSubscription: Subscription;
   private loading: any;
 

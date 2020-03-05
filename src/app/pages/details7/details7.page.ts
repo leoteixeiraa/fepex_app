@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cultural_quinta } from 'src/app/interfaces/cultural_quinta';
+import { Cultural } from 'src/app/interfaces/cultural';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { CulturalQuintaService } from 'src/app/services/cultural-quinta.service'
   styleUrls: ['./details7.page.scss'],
 })
 export class Details7Page implements OnInit {
-  private culturalquinta: Cultural_quinta = {};
+  private culturalquinta: Cultural = {};
   private loading: any;
   private culturalquintasId: string = null;
   private cultural_quintaSubscription: Subscription;

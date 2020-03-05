@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Oral_sexta } from '../interfaces/oral_sexta';
+import { Oral } from '../interfaces/oral';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OralSextaService {
-  private oral_sextasCollection: AngularFirestoreCollection<Oral_sexta>; //armazenar referencia da coleção
+  private oral_sextasCollection: AngularFirestoreCollection<Oral>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.oral_sextasCollection = this.afs.collection<Oral_sexta>('OralSextas');
+    this.oral_sextasCollection = this.afs.collection<Oral>('OralSextas');
     ref => ref => ref.orderBy('time_start'); //realizando a consulta por orderBy
     Eg:
     this.oral_sextasCollection = this.afs.collection('OralSextas', ref => ref.orderBy('time_start')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class OralSextaService {
     )
   }
 
-  addOralSexta(oral_sexta: Oral_sexta) {
+  addOralSexta(oral_sexta: Oral) {
     return this.oral_sextasCollection.add(oral_sexta);
   }
 
   getOralSexta(id: string) { //pegar item especifico pelo id
-    return this.oral_sextasCollection.doc<Oral_sexta>(id).valueChanges();
+    return this.oral_sextasCollection.doc<Oral>(id).valueChanges();
 
   }
 
-  updateOralSexta(id: string, oral_sexta: Oral_sexta) {
-    return this.oral_sextasCollection.doc<Oral_sexta>(id).update(oral_sexta);
+  updateOralSexta(id: string, oral_sexta: Oral) {
+    return this.oral_sextasCollection.doc<Oral>(id).update(oral_sexta);
 
   }
   deleteOralSexta(id: string) {

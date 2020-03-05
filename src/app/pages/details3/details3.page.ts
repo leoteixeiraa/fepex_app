@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Sexta } from 'src/app/interfaces/sexta';
+import { DiaSemana } from 'src/app/interfaces/dia_semana';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { SextaService } from 'src/app/services/sexta.service';
   styleUrls: ['./details3.page.scss'],
 })
 export class Details3Page implements OnInit {
-  private sexta: Sexta = {};
+  private sexta: DiaSemana = {};
   private loading: any;
   private sextaId: string = null;
   private sextaSubscription: Subscription;

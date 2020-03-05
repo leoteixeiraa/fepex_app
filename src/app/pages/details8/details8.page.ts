@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cultural_sexta } from 'src/app/interfaces/cultural_sexta';
+import { Cultural } from 'src/app/interfaces/cultural';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ import { CulturalSextaService } from 'src/app/services/cultural-sexta.service';
   styleUrls: ['./details8.page.scss'],
 })
 export class Details8Page implements OnInit {
-  private culturalsexta: Cultural_sexta = {};
+  private culturalsexta: Cultural = {};
   private loading: any;
   private culturalsextasId: string = null;
   private cultural_sextaSubscription: Subscription;

@@ -1,4 +1,4 @@
-export interface Quarta {
+export interface DiaSemana {
     id?: string;
     title?: string;
     description?: string;

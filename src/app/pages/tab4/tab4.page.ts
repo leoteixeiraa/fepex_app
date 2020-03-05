@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Oral_quarta } from 'src/app/interfaces/oral_quarta';
+import { Oral } from 'src/app/interfaces/oral';
 import { Subscription } from 'rxjs';
 import { OralQuartaService } from 'src/app/services/oral-quarta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab4Page {
-  private oralquartas = new Array<Oral_quarta>();
+  private oralquartas = new Array<Oral>();
   private oral_quartasSubscription: Subscription;
   private loading: any;
   textoBuscar = '';

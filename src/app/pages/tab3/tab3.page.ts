@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Sexta } from 'src/app/interfaces/sexta';
+import { DiaSemana } from 'src/app/interfaces/dia_semana';
 import { Subscription } from 'rxjs';
 import { SextaService } from 'src/app/services/sexta.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,7 +14,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 
 export class Tab3Page {
-  private sextas = new Array<Sexta>();
+  private sextas = new Array<DiaSemana>();
   private sextasSubscription: Subscription;
   private loading: any;
   textoBuscar = '';

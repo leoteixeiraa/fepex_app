@@ -1,6 +1,5 @@
-<ion-split-pane>
-  <ion-menu contentId="content">
-
+<ion-split-pane contentId="main">
+  <ion-menu contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -26,9 +25,7 @@
       </ion-list>
 
     </ion-content>
-
   </ion-menu>
 
-  <ion-router-outlet id="content" main></ion-router-outlet>
-
-</ion-split-pane>
+  <!-- the main content -->
+  <ion-router-outlet id="main"></ion-router-outlet>

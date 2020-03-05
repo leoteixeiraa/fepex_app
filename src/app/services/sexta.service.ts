@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Sexta } from '../interfaces/sexta';
+import { DiaSemana } from '../interfaces/dia_semana';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SextaService {
-  private sextasCollection: AngularFirestoreCollection<Sexta>; //armazenar referencia da coleção
+  private sextasCollection: AngularFirestoreCollection<DiaSemana>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.sextasCollection = this.afs.collection<Sexta>('Sextas');
+    this.sextasCollection = this.afs.collection<DiaSemana>('Sextas');
     ref => ref => ref.orderBy('time_start'); //realizando a consulta por orderBy
     Eg:
     this.sextasCollection = this.afs.collection('Sextas', ref => ref.orderBy('time_start')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class SextaService {
     )
   }
 
-  addSexta(sexta: Sexta) {
+  addSexta(sexta: DiaSemana) {
     return this.sextasCollection.add(sexta);
   }
 
   getSexta(id: string) { //pegar item especifico pelo id
-    return this.sextasCollection.doc<Sexta>(id).valueChanges();
+    return this.sextasCollection.doc<DiaSemana>(id).valueChanges();
 
   }
 
-  updateSexta(id: string, sexta: Sexta) {
-    return this.sextasCollection.doc<Sexta>(id).update(sexta);
+  updateSexta(id: string, sexta: DiaSemana) {
+    return this.sextasCollection.doc<DiaSemana>(id).update(sexta);
 
   }
   deleteSexta(id: string) {

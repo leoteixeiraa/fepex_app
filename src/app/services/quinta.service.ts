@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Quinta } from '../interfaces/quinta';
+import { DiaSemana } from '../interfaces/dia_semana';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuintaService {
-  private quintasCollection: AngularFirestoreCollection<Quinta>; //armazenar referencia da coleção
+  private quintasCollection: AngularFirestoreCollection<DiaSemana>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.quintasCollection = this.afs.collection<Quinta>('Quintas');
+    this.quintasCollection = this.afs.collection<DiaSemana>('Quintas');
     ref => ref => ref.orderBy('time_start'); //realizando a consulta por orderBy
     Eg:
     this.quintasCollection = this.afs.collection('Quintas', ref => ref.orderBy('time_start')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class QuintaService {
     )
   }
 
-  addQuinta(quinta: Quinta) {
+  addQuinta(quinta: DiaSemana) {
     return this.quintasCollection.add(quinta);
   }
 
   getQuinta(id: string) { //pegar item especifico pelo id
-    return this.quintasCollection.doc<Quinta>(id).valueChanges();
+    return this.quintasCollection.doc<DiaSemana>(id).valueChanges();
 
   }
 
-  updateQuinta(id: string, quinta: Quinta) {
-    return this.quintasCollection.doc<Quinta>(id).update(quinta);
+  updateQuinta(id: string, quinta: DiaSemana) {
+    return this.quintasCollection.doc<DiaSemana>(id).update(quinta);
 
   }
   deleteQuinta(id: string) {

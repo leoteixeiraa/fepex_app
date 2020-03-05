@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Oral_quarta } from '../interfaces/oral_quarta';
+import { Oral } from '../interfaces/oral';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OralQuartaService {
-  private oral_quartasCollection: AngularFirestoreCollection<Oral_quarta>; //armazenar referencia da coleção
+  private oral_quartasCollection: AngularFirestoreCollection<Oral>; //armazenar referencia da coleção
 
   constructor(private afs: AngularFirestore) {
-    this.oral_quartasCollection = this.afs.collection<Oral_quarta>('OralQuartas');
+    this.oral_quartasCollection = this.afs.collection<Oral>('OralQuartas');
     ref => ref => ref.orderBy('time_start'); //realizando a consulta por orderBy
     Eg:
     this.oral_quartasCollection = this.afs.collection('OralQuartas', ref => ref.orderBy('time_start')); //retornando dados em order crescente a partir do tempo
@@ -31,17 +31,17 @@ export class OralQuartaService {
     )
   }
 
-  addOralQuarta(oral_quarta: Oral_quarta) {
+  addOralQuarta(oral_quarta: Oral) {
     return this.oral_quartasCollection.add(oral_quarta);
   }
 
   getOralQuarta(id: string) { //pegar item especifico pelo id
-    return this.oral_quartasCollection.doc<Oral_quarta>(id).valueChanges();
+    return this.oral_quartasCollection.doc<Oral>(id).valueChanges();
 
   }
 
-  updateOralQuarta(id: string, oral_quarta: Oral_quarta) {
-    return this.oral_quartasCollection.doc<Oral_quarta>(id).update(oral_quarta);
+  updateOralQuarta(id: string, oral_quarta: Oral) {
+    return this.oral_quartasCollection.doc<Oral>(id).update(oral_quarta);
 
   }
   deleteOralQuarta(id: string) {

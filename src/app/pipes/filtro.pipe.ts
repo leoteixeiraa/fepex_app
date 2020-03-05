@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Sexta } from '../interfaces/sexta';
+import { DiaSemana } from '../interfaces/dia_semana';
 import { SextaService } from '../services/sexta.service';
 
 
@@ -8,7 +8,7 @@ import { SextaService } from '../services/sexta.service';
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(sextas: Sexta[], texto: string): Sexta[] {
+  transform(sextas: DiaSemana[], texto: string): DiaSemana[] {
 
 
     if (texto.length === 0) { return sextas; }
