@@ -41,6 +41,10 @@ const routes: Routes = [
       {
         path: 'culturais',
         loadChildren: '../first-with-tabs3/first-with-tabs3.module#FirstWithTabs3PageModule'
+      },
+      {
+        path: 'sobre',
+        loadChildren: '../sobre/sobre.module#SobrePageModule'
       }
     ]
   }

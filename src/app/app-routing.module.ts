@@ -50,6 +50,8 @@ const routes: Routes = [
   { path: 'tab8', loadChildren: './pages/tab8/tab8.module#Tab8PageModule', canActivate: [AuthGuard] },
   { path: 'details8', loadChildren: './pages/details8/details8.module#Details8PageModule', canActivate: [AuthGuard] },
   { path: 'details9', loadChildren: './pages/details9/details9.module#Details9PageModule', canActivate: [AuthGuard] },
+  { path: 'sobre', loadChildren: './pages/sobre/sobre.module#SobrePageModule' },
+
 ];
 
 
