@@ -36,3 +36,5 @@ Tutorial sobre a Instalação e configuração do projeto na documentação!
 ## Desenvolvedores do Projeto:
 
 1. Leonardo Teixeira
+2. Paulo Luciano Cizeski de Lorenzi
+3. Fabricio Bizotto
