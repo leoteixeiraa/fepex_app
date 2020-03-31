@@ -3,72 +3,98 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-
-
     <ion-title>Sobre</ion-title>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h3>O que é o aplicativo?</h3>
-  <ion-label>
-  <p>O aplicativo tem como objetivo divulgar os projetos já apresentados nas edições passadas da FEPEX do Campus Fraiburgo.</p>
-  </ion-label>
-  <h3>Participantes</h3>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>O que é o aplicativo?</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      O aplicativo tem como objetivo divulgar os projetos já apresentados nas edições passadas da FEPEX do Campus Fraiburgo.
+    </ion-card-content>
+  </ion-card>
 
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Fabrício Bizotto</h3>
-      <p>Professor Colaborador</p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Gabriella Aparecida Ronchi</h3>
-      <p>Aluna Colaboradora</p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Gilberto Speggiorin de Oliveira</h3>
-      <p>Professor Orientador</p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Leonardo Venâncio Teixeira</h3>
-      <p>Aluno Colaborador</p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Marcelo Volpatto Marques</h3>
-      <p>Servidor Colaborador</p>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-    <ion-label>
-      <h3>Paulo Luciano Cizeski de Lorenzi</h3>
-      <p>Aluno Bolsista</p>
-    </ion-label>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Participantes</ion-card-title>
+    </ion-card-header>
+
+    <ion-item 
+      [color]="i % 2 == 0 ? '' : 'light'" 
+      *ngFor="let integrante of lista; let i = index"
+    >
+      <ion-avatar slot="start">
+        <img [src]="integrante.avatar">
+      </ion-avatar>
+      <ion-label>
+        <h3>{{integrante.nome}}</h3>
+        <p>{{integrante.funcao}}</p>
+      </ion-label>
+    </ion-item>
+
+
+    <!-- <ion-item color="light">
+      <ion-avatar slot="start">
+        <img src="/assets/img/fabricio.gif">
+      </ion-avatar>
+      <ion-label>
+        <h3>Fabrício Bizotto</h3>
+        <p>Professor Colaborador</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Gabriella Aparecida Ronchi</h3>
+        <p>Aluna Colaboradora</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Gilberto Speggiorin de Oliveira</h3>
+        <p>Professor Orientador</p>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Leonardo Venâncio Teixeira</h3>
+        <p>Aluno Colaborador</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Marcelo Volpatto Marques</h3>
+        <p>Servidor Colaborador</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Paulo Luciano Cizeski de Lorenzi</h3>
+        <p>Aluno Bolsista</p>
+      </ion-label>
+    </ion-item> -->
+  </ion-card>
 </ion-content>
