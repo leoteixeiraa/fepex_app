@@ -4,38 +4,55 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Sobre</ion-title>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>O que é o aplicativo?</ion-card-title>
-    </ion-card-header>
-  
+    <!-- <ion-card-header>
+      <ion-card-subtitle>O que é o aplicativo?</ion-card-subtitle>
+    </ion-card-header> -->
+
     <ion-card-content>
-      O aplicativo tem como objetivo divulgar os projetos já apresentados nas edições passadas da FEPEX do Campus Fraiburgo.
+      O aplicativo tem como objetivo divulgar os projetos já apresentados nas
+      edições passadas da FEPEX do Campus Fraiburgo.
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Participantes</ion-card-title>
+      <ion-card-subtitle>Equipe</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-item 
-      [color]="i % 2 == 0 ? '' : 'light'" 
+    <ion-item
+      [color]="i % 2 == 0 ? '' : 'light'"
       *ngFor="let integrante of lista; let i = index"
     >
       <ion-avatar slot="start">
-        <img [src]="integrante.avatar">
+        <img [src]="integrante.avatar" />
       </ion-avatar>
       <ion-label>
         <h3>{{integrante.nome}}</h3>
         <p>{{integrante.funcao}}</p>
-        <img src="/assets/img/lattes-logo.webp">
       </ion-label>
+      <a [href]="integrante.lattes" target="_blank">
+        <ion-img
+          title="Currículo Lattes"
+          item-right
+          style="width: 24px;"
+          src="/assets/img/lattes-logo.webp"
+        ></ion-img>
+      </a>
     </ion-item>
   </ion-card>
+
+  <ion-toolbar color="dark" text-center>
+    <ion-title style="font-size: 14px;">
+      <span >
+        Instituto Federal Catarinense <br />
+        Campus Fraiburgo
+      </span>
+    </ion-title>
+  </ion-toolbar>
+
 </ion-content>
