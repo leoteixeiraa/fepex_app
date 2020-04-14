@@ -52,7 +52,8 @@ const routes: Routes = [
   { path: 'details9', loadChildren: './pages/details9/details9.module#Details9PageModule', canActivate: [AuthGuard] },
   { path: 'sobre', loadChildren: './pages/sobre/sobre.module#SobrePageModule' },
   { path: 'trabalhos-anteriores', loadChildren: './pages/trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule' },
-
+  { path: 'trabalhos-anteriores-result', loadChildren: './pages/trabalhos-anteriores-result/trabalhos-anteriores-result.module#TrabalhosAnterioresResultPageModule', canActivate: [AuthGuard] },
+  { path: 'trabalhos-anteriores-result-detail/:id', loadChildren: './pages/trabalhos-anteriores-result-detail/trabalhos-anteriores-result-detail.module#TrabalhosAnterioresResultDetailPageModule', canActivate: [AuthGuard] },
 ];
 
 

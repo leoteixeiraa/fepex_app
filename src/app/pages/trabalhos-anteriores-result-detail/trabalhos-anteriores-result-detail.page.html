@@ -1,0 +1,35 @@
+<!-- details do trabalho anterior -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Detalhes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-info">
+    <h4 class="ion-padding-start">{{trabalho.titulo}} &mdash; {{trabalho.categoria}}</h4>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="contact" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Orientadores</ion-label>
+        <h6>{{trabalho.orientadores}}</h6>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="contacts" slot="start"></ion-icon>
+        <ion-label position="stacked" color="primary">Autores</ion-label>
+        <h6>{{trabalho.autores}}</h6>
+      </ion-item>
+    </ion-list>
+
+    <h4 class="ion-padding-start">Resumo</h4>
+    <p class="ion-padding-start ion-padding-end">
+      {{ trabalho.resumo }}
+    </p>
+
+  </div>
+</ion-content>

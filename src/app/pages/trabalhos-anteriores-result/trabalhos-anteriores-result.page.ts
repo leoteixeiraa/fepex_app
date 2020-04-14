@@ -5,12 +5,14 @@ import { AuthService } from "src/app/services/auth.service";
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
+
 @Component({
-  selector: "app-trabalhos-anteriores",
-  templateUrl: "./trabalhos-anteriores.page.html",
-  styleUrls: ["./trabalhos-anteriores.page.scss"],
+  selector: 'app-trabalhos-anteriores-result',
+  templateUrl: './trabalhos-anteriores-result.page.html',
+  styleUrls: ['./trabalhos-anteriores-result.page.scss'],
 })
-export class TrabalhosAnterioresPage implements OnInit {
+export class TrabalhosAnterioresResultPage implements OnInit {
+
   private trabalhos = new Array<TrabalhoAnterior>();
   private subsctiption: Subscription
   private loading: any;
@@ -28,4 +30,5 @@ export class TrabalhosAnterioresPage implements OnInit {
 
   ngOnInit() {
   }
+
 }
