@@ -45,6 +45,10 @@ const routes: Routes = [
       {
         path: 'sobre',
         loadChildren: '../sobre/sobre.module#SobrePageModule'
+      },
+      {
+        path: 'fepex-anteriores',
+        loadChildren: '../fepex-anteriores/fepex-anteriores.module#FepexAnterioresPageModule'
       }
     ]
   }

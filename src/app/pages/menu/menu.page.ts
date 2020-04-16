@@ -46,6 +46,11 @@ export class MenuPage implements OnInit {
       icon: 'ios-information-circle',
       title: 'Sobre',
       url: '/menu/sobre'
+    },
+    {
+      icon: 'ios-information-circle',
+      title: 'FEPEX Anteriores',
+      url: '/menu/fepex-anteriores'
     }
     // {
     //   icon: 'md-trophy',

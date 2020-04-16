@@ -54,6 +54,10 @@ const routes: Routes = [
   { path: 'trabalhos-anteriores', loadChildren: './pages/trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule' },
   { path: 'trabalhos-anteriores-result', loadChildren: './pages/trabalhos-anteriores-result/trabalhos-anteriores-result.module#TrabalhosAnterioresResultPageModule', canActivate: [AuthGuard] },
   { path: 'trabalhos-anteriores-result-detail/:id', loadChildren: './pages/trabalhos-anteriores-result-detail/trabalhos-anteriores-result-detail.module#TrabalhosAnterioresResultDetailPageModule', canActivate: [AuthGuard] },
+  { path: 'fepex-anteriores', loadChildren: './pages/fepex-anteriores/fepex-anteriores.module#FepexAnterioresPageModule' },  { path: 'primeira-fepex', loadChildren: './pages/primeira-fepex/primeira-fepex.module#PrimeiraFepexPageModule' },
+
+
+
 ];
 
 
