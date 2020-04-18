@@ -54,11 +54,18 @@ const routes: Routes = [
   { path: 'trabalhos-anteriores', loadChildren: './pages/trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule' },
   { path: 'trabalhos-anteriores-result', loadChildren: './pages/trabalhos-anteriores-result/trabalhos-anteriores-result.module#TrabalhosAnterioresResultPageModule', canActivate: [AuthGuard] },
   { path: 'trabalhos-anteriores-result-detail/:id', loadChildren: './pages/trabalhos-anteriores-result-detail/trabalhos-anteriores-result-detail.module#TrabalhosAnterioresResultDetailPageModule', canActivate: [AuthGuard] },
-  { path: 'fepex-anteriores', loadChildren: './pages/fepex-anteriores/fepex-anteriores.module#FepexAnterioresPageModule' },  { path: 'primeira-fepex', loadChildren: './pages/primeira-fepex/primeira-fepex.module#PrimeiraFepexPageModule' },
+  { path: 'fepex-anteriores', loadChildren: './pages/fepex-anteriores/fepex-anteriores.module#FepexAnterioresPageModule' },
+  { path: 'primeira-fepex', loadChildren: './pages/primeira-fepex/primeira-fepex.module#PrimeiraFepexPageModule' },
   { path: 'segunda-fepex', loadChildren: './pages/segunda-fepex/segunda-fepex.module#SegundaFepexPageModule' },
   { path: 'terceira-fepex', loadChildren: './pages/terceira-fepex/terceira-fepex.module#TerceiraFepexPageModule' },
   { path: 'quarta-fepex', loadChildren: './pages/quarta-fepex/quarta-fepex.module#QuartaFepexPageModule' },
-
+  { path: 'primeira-fepex-artigos', loadChildren: './pages/primeira-fepex-artigos/primeira-fepex-artigos.module#PrimeiraFepexArtigosPageModule' },  { path: 'primeira-fepex-resumos', loadChildren: './pages/primeira-fepex-resumos/primeira-fepex-resumos.module#PrimeiraFepexResumosPageModule' },
+  { path: 'segunda-fepex-resumos', loadChildren: './pages/segunda-fepex-resumos/segunda-fepex-resumos.module#SegundaFepexResumosPageModule' },
+  { path: 'segunda-fepex-artigos', loadChildren: './pages/segunda-fepex-artigos/segunda-fepex-artigos.module#SegundaFepexArtigosPageModule' },
+  { path: 'terceira-fepex-artigos', loadChildren: './pages/terceira-fepex-artigos/terceira-fepex-artigos.module#TerceiraFepexArtigosPageModule' },
+  { path: 'terceira-fepex-resumos', loadChildren: './pages/terceira-fepex-resumos/terceira-fepex-resumos.module#TerceiraFepexResumosPageModule' },
+  { path: 'quarta-fepex-resumos', loadChildren: './pages/quarta-fepex-resumos/quarta-fepex-resumos.module#QuartaFepexResumosPageModule' },
+  { path: 'quarta-fepex-artigos', loadChildren: './pages/quarta-fepex-artigos/quarta-fepex-artigos.module#QuartaFepexArtigosPageModule' },
 
 
 ];
