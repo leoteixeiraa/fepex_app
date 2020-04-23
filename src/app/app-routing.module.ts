@@ -60,7 +60,8 @@ const routes: Routes = [
   // { path: 'terceira-fepex', loadChildren: './pages/terceira-fepex/terceira-fepex.module#TerceiraFepexPageModule' },
   // { path: 'quarta-fepex', loadChildren: './pages/quarta-fepex/quarta-fepex.module#QuartaFepexPageModule' },
   { path: 'primeira-fepex-artigos/:ano', loadChildren: './pages/primeira-fepex-artigos/primeira-fepex-artigos.module#PrimeiraFepexArtigosPageModule' },
-  { path: 'primeira-fepex-resumos/:ano', loadChildren: './pages/primeira-fepex-resumos/primeira-fepex-resumos.module#PrimeiraFepexResumosPageModule' },
+  { path: 'primeira-fepex-resumos/:ano', loadChildren: './pages/primeira-fepex-resumos/primeira-fepex-resumos.module#PrimeiraFepexResumosPageModule' },  { path: 'filmes', loadChildren: './pages/filmes/filmes.module#FilmesPageModule' },
+
   // { path: 'segunda-fepex-resumos', loadChildren: './pages/segunda-fepex-resumos/segunda-fepex-resumos.module#SegundaFepexResumosPageModule' },
   // { path: 'segunda-fepex-artigos', loadChildren: './pages/segunda-fepex-artigos/segunda-fepex-artigos.module#SegundaFepexArtigosPageModule' },
   // { path: 'terceira-fepex-artigos', loadChildren: './pages/terceira-fepex-artigos/terceira-fepex-artigos.module#TerceiraFepexArtigosPageModule' },
