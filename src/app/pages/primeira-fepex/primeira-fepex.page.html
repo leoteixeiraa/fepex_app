@@ -3,15 +3,11 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>FEPEX 2016</ion-title>
+    <ion-title>FEPEX {{ano}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">ARTIGOS</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">RESUMOS</ion-button>
+  <ion-button [routerLink]="['/primeira-fepex-artigos', ano]"  expand="block" size="large">ARTIGOS</ion-button>
+  <ion-button [routerLink]="['/primeira-fepex-resumos', ano]" expand="block" size="large">RESUMOS</ion-button>
 </ion-content>

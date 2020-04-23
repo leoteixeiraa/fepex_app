@@ -3,18 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Artigos</ion-title>
+    <ion-title>Artigos {{ano}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">ENSINO</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">PESQUISA</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">EXTENSÃO</ion-button>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button [routerLink]="['/trabalhos-anteriores-result', ano]" expand="block" size="large">ENSINO</ion-button>
+      <ion-button expand="block" size="large">PESQUISA</ion-button>
+      <ion-button expand="block" size="large">EXTENSÃO</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+  
 </ion-content>

@@ -23,7 +23,7 @@ export class TrabalhosAnterioresResultPage implements OnInit {
     private loadingController:LoadingController,
     private toastController:ToastController
   ) {
-    this.subsctiption = this.service.getTrabalhos().subscribe(data =>{
+    this.subsctiption = this.service.getTrabalhos(2016, 'Ensino', 'ARTIGO').subscribe(data =>{
       this.trabalhos = data;
     })
   }

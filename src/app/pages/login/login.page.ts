@@ -43,8 +43,6 @@ export class LoginPage implements OnInit {
     } catch (error) {
       console.error(error);
 
-
-
       let message: string;
 
       switch (error.code) {

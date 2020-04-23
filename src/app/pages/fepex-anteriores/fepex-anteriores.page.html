@@ -8,17 +8,29 @@
 </ion-header>
 
 <ion-content>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">FEPEX 2016</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">FEPEX 2017</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">FEPEX 2018</ion-button>
-  <br>
-  <br>
-  <ion-button expand="block" size="large">FEPEX 2019</ion-button>
+  <ion-card>
+    <ion-card-content>
+      <ion-button [routerLink]="['/primeira-fepex', 2016]" expand="block" color="success" size="large">FEPEX 2016</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button [routerLink]="['/primeira-fepex', 2017]" expand="block" color="secondary" size="large">FEPEX 2017</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button [routerLink]="['/primeira-fepex', 2018]" expand="block" color="tertiary" size="large">FEPEX 2018</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button [routerLink]="['/primeira-fepex', 2019]" expand="block" color="dark" size="large">FEPEX 2019</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
 

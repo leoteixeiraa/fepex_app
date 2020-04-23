@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-primeira-fepex-artigos',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./primeira-fepex-artigos.page.scss'],
 })
 export class PrimeiraFepexArtigosPage implements OnInit {
+  private ano: String = null;
 
-  constructor() { }
+  constructor(private activeRoute: ActivatedRoute) {
+    this.ano = this.activeRoute.snapshot.params['ano'];
+  }
 
   ngOnInit() {
   }

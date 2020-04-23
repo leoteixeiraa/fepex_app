@@ -25,8 +25,8 @@
     </ion-card-header>
 
     <ion-item
-      [color]="i % 2 == 0 ? '' : 'light'"
-      *ngFor="let integrante of lista; let i = index"
+      *ngFor="let integrante of listaDeIntegrantes; let indice = index"
+      [color]="indice % 2 == 0 ? '' : 'light'"
     >
       <ion-avatar slot="start">
         <img [src]="integrante.avatar" />
