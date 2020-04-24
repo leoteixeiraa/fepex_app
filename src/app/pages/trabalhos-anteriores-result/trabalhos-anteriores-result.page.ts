@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TrabalhoAnterior } from "src/app/interfaces/trabalho_anterior";
 import { TrabalhosAnterioresService } from "src/app/services/trabalhos-anteriores.service";
 import { AuthService } from "src/app/services/auth.service";
-import { LoadingController, ToastController } from "@ionic/angular";
+import { LoadingController, ToastController, MenuController } from "@ionic/angular";
 import { Subscription } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
 
@@ -25,7 +25,8 @@ export class TrabalhosAnterioresResultPage implements OnInit {
     private authService: AuthService,
     private loadingController: LoadingController,
     private toastController: ToastController,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private menu: MenuController
   ) {
     this.ano = this.activeRoute.snapshot.params["ano"];
     this.categoria = this.activeRoute.snapshot.params["categoria"];
@@ -33,6 +34,7 @@ export class TrabalhosAnterioresResultPage implements OnInit {
   }
 
   ngOnInit() {
+    this.menu.open();
     try {
       this.subsctiption = this.service
       .getTrabalhos(this.ano, this.categoria, this.tipo)

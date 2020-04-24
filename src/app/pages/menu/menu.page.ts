@@ -50,8 +50,9 @@ export class MenuPage implements OnInit {
     {
       icon: 'folder',
       title: 'FEPEX Anteriores',
-      url: '/menu/trabalhos-anteriores'
-    }
+      url: '/menu/anteriores',
+    },
+    
     // {
     //   icon: 'md-trophy',
     //   title: 'Premiações',

@@ -47,7 +47,7 @@ const routes: Routes = [
         loadChildren: '../sobre/sobre.module#SobrePageModule'
       },
       {
-        path: 'trabalhos-anteriores',
+        path: 'anteriores',
         loadChildren: '../trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule'
       }
     ]

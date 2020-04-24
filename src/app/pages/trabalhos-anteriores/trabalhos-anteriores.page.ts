@@ -7,6 +7,7 @@ import {
   ToastController,
   NavController,
   NavParams,
+  MenuController,
 } from "@ionic/angular";
 import { Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -40,25 +41,22 @@ export class TrabalhosAnterioresPage implements OnInit {
     this.titulo = this.criarTituloDaTela();
   }
 
-  ngOnInit() {
-    // this.subsctiption = this.service.getTrabalhos().subscribe(data =>{
-    //   this.trabalhos = data;
-    // })
-  }
+  ngOnInit() {}
 
   irParaTrabalhosAno(ano: number) {
-    this.navigation.navigateForward(`/trabalhos-anteriores/${ano}`);
+    this.navigation.navigateForward(`anteriores/${ano}`);
   }
 
   irParaTrabalhosAnoCategoria(categoria: string) {
     this.navigation.navigateForward(
-      `/trabalhos-anteriores/${this.ano}/${categoria}`
+      `anteriores/${this.ano}/${categoria}`
     );
   }
 
   irParaTrabalhosResultado(tipo: string) {
+    this.navigation.pop();
     this.navigation.navigateForward(
-      `/trabalhos-anteriores-result/${this.ano}/${this.categoria}/${tipo}`
+      `anteriores-result/${this.ano}/${this.categoria}/${tipo}`
     );
   }
 

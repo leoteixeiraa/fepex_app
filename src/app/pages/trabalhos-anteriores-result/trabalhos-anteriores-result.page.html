@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <!-- <ion-back-button></ion-back-button> -->
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+      <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
     <ion-title>Trabalhos Acadêmicos</ion-title>
   </ion-toolbar>
@@ -38,7 +38,7 @@
       <ion-item-divider> </ion-item-divider>  
       <ion-button
         routerDirection='root'
-        [routerLink]="['/trabalhos-anteriores']"
+        [routerLink]="['/menu/anteriores']"
         expand="block"
         color="success"
         >Tente Novamente</ion-button
@@ -51,7 +51,7 @@
       <!--Abrir pagina de  detalhes-->
       <ion-item
         button
-        [routerLink]="['/trabalhos-anteriores-result-detail', trabalho.id]"
+        [routerLink]="['/anteriores-result-detail', trabalho.id]"
       >
         <ion-label>
           {{ trabalho.titulo }}
