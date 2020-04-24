@@ -47,11 +47,6 @@ export class MenuPage implements OnInit {
       title: 'Sobre',
       url: '/menu/sobre'
     },
-    {
-      icon: 'folder',
-      title: 'FEPEX Anteriores',
-      url: '/menu/anteriores',
-    },
     
     // {
     //   icon: 'md-trophy',
@@ -59,6 +54,14 @@ export class MenuPage implements OnInit {
     //   url: '/menu/premiacao'
     // }
   ];
+
+  pages_2 = [
+    {
+      icon: 'folder',
+      title: 'FEPEX Anteriores',
+      url: '/menu/anteriores',
+    }
+  ]
 
   constructor(private authService: AuthService,
     private router: Router) {
