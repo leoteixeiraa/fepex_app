@@ -38,3 +38,4 @@ Tutorial sobre a Instalação e configuração do projeto na documentação!
 1. Leonardo Teixeira
 2. Paulo Luciano Cizeski de Lorenzi
 3. Fabricio Bizotto
+4. Walter Antonio Teixeira da Silva
