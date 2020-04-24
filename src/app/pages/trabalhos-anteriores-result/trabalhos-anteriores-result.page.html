@@ -6,6 +6,13 @@
     </ion-buttons>
     <ion-title>Trabalhos Acadêmicos</ion-title>
   </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar
+      (ionChange)="filterTab( $event )"
+      placeholder="Buscar trabalho"
+      animated
+    ></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -29,15 +36,20 @@
     </ion-item>
   </ion-list>
 
+  <!-- Mostrar os parâmetros informados pelo usuário -->
+  <ion-card *ngIf="ano && categoria && tipo" class="ion-text-center">
+    <ion-badge color="tertiary" style="margin-right: 10px;">{{ano}}</ion-badge>
+    <ion-badge color="tertiary" style="margin-right: 10px;">{{categoria}}</ion-badge>
+    <ion-badge color="tertiary" style="margin-right: 10px;">{{tipo}}</ion-badge>
+  </ion-card>
+
   <ion-card *ngIf="trabalhos && trabalhos.length == 0" class="ion-text-center">
     <ion-card-header>
       <ion-card-subtitle>Nenhuma Informação Encontrada</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <em>{{ano}} - {{categoria}} - {{tipo}}</em>
-      <ion-item-divider> </ion-item-divider>  
       <ion-button
-        routerDirection='root'
+        routerDirection="root"
         [routerLink]="['/menu/anteriores']"
         expand="block"
         color="success"
@@ -47,9 +59,10 @@
   </ion-card>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let trabalho of trabalhos">
+    <ion-item-sliding *ngFor="let trabalho of trabalhos | filtro:textoBuscar; let indice = index">
       <!--Abrir pagina de  detalhes-->
       <ion-item
+        [color]="indice % 2 == 0 ? '' : 'light'"
         button
         [routerLink]="['/anteriores-result-detail', trabalho.id]"
       >

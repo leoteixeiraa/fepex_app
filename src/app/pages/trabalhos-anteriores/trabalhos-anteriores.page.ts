@@ -6,8 +6,6 @@ import {
   LoadingController,
   ToastController,
   NavController,
-  NavParams,
-  MenuController,
 } from "@ionic/angular";
 import { Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -48,9 +46,7 @@ export class TrabalhosAnterioresPage implements OnInit {
   }
 
   irParaTrabalhosAnoCategoria(categoria: string) {
-    this.navigation.navigateForward(
-      `anteriores/${this.ano}/${categoria}`
-    );
+    this.navigation.navigateForward(`anteriores/${this.ano}/${categoria}`);
   }
 
   irParaTrabalhosResultado(tipo: string) {

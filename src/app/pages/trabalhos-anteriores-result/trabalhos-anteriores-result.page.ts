@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TrabalhoAnterior } from "src/app/interfaces/trabalho_anterior";
 import { TrabalhosAnterioresService } from "src/app/services/trabalhos-anteriores.service";
 import { AuthService } from "src/app/services/auth.service";
-import { LoadingController, ToastController, MenuController } from "@ionic/angular";
+import { LoadingController, ToastController } from "@ionic/angular";
 import { Subscription } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
 
@@ -12,8 +12,10 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./trabalhos-anteriores-result.page.scss"],
 })
 export class TrabalhosAnterioresResultPage implements OnInit {
-  private trabalhos: Array<TrabalhoAnterior>;
+  private trabalhos = new Array<TrabalhoAnterior>();
   private subsctiption: Subscription;
+
+  textoBuscar: string = ""; //Filtro
 
   // Parâmetros recebidos
   private ano: number; // 2016 - 2019
@@ -25,8 +27,7 @@ export class TrabalhosAnterioresResultPage implements OnInit {
     private authService: AuthService,
     private loadingController: LoadingController,
     private toastController: ToastController,
-    private activeRoute: ActivatedRoute,
-    private menu: MenuController
+    private activeRoute: ActivatedRoute
   ) {
     this.ano = this.activeRoute.snapshot.params["ano"];
     this.categoria = this.activeRoute.snapshot.params["categoria"];
@@ -34,18 +35,21 @@ export class TrabalhosAnterioresResultPage implements OnInit {
   }
 
   ngOnInit() {
-    this.menu.open();
-    try {
-      this.subsctiption = this.service
+    this.subsctiption = this.service
       .getTrabalhos(this.ano, this.categoria, this.tipo)
       .subscribe((data) => {
         this.trabalhos = data;
       });
-    } catch (error) {
-      this.trabalhos = []
-      console.log('====================================');
-      console.log(error);
-      console.log('====================================');
-    }
+  }
+
+  filterTab(event) {
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+  }
+
+  ngOnDestroy() {
+    //destruindo sessão da página
+    console.log("saindo da tela trabalhos result");
+    this.subsctiption.unsubscribe();
   }
 }
