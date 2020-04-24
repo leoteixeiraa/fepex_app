@@ -6,6 +6,7 @@ export interface TrabalhoAnterior {
     categoria?: string;
     orientadores?: string; //orientadores
     link?: string;
+    tipo?: string;
     // observation?: string;
     // createdAt?: number;
     // userId?: string;

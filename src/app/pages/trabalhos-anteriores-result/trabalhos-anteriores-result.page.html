@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="!trabalhos.length">
+  <ion-list *ngIf="loading">
     <!-- Arrays de itens -->
     <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
       <ion-avatar slot="start">
@@ -22,12 +22,17 @@
     </ion-item>
   </ion-list>
 
+  <ion-card *ngIf="!loading && !trabalhos.length">
+    <ion-card-content>
+      Nenhuma informação encontrada!
+    </ion-card-content>
+  </ion-card>
+
   <ion-list>
+    
     <ion-item-sliding *ngFor="let trabalho of trabalhos">
       <!--Abrir pagina de  detalhes-->
       <ion-item button [routerLink]="['/trabalhos-anteriores-result-detail', trabalho.id]">
-
-
 
         <ion-label>
           {{ trabalho.titulo }}

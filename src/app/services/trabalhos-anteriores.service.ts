@@ -2,9 +2,11 @@ import { Injectable } from "@angular/core";
 import {
   AngularFirestoreCollection,
   AngularFirestore,
+  CollectionReference,
 } from "@angular/fire/firestore";
 import { TrabalhoAnterior } from "../interfaces/trabalho_anterior";
 import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -20,16 +22,16 @@ export class TrabalhosAnterioresService {
     );
   }
 
-  getTrabalhos(ano: number, tipo: string, categoria: string) {
-
+  getTrabalhos(ano: number, categoria: string, tipo: string) {
     this.trabalhosCollection = this.afs.collection<TrabalhoAnterior>(
-      "Trabalhos2016",
-      (ref) =>
-        ref
-          .where("categoria", "==", categoria)
-          .where("tipo", "==", tipo)
-          // .orderBy("titulo")
+      "Trabalhos" + ano,
+      (ref) => ref.where("categoria", "==", categoria).where("tipo", "==", tipo)
     );
+
+    // this.ref = this.afs.collection<TrabalhoAnterior>("Trabalhos2016").ref;
+    // this.ref.where("categoria", "==", "Ensino").where("tipo", "==", "ARTIGO").onSnapshot(function (x) {
+    //   console.log(x.docs);
+    // });
 
     return this.trabalhosCollection.snapshotChanges().pipe(
       map((actions) => {
