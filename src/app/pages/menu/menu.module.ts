@@ -47,8 +47,8 @@ const routes: Routes = [
         loadChildren: '../sobre/sobre.module#SobrePageModule'
       },
       {
-        path: 'fepex-anteriores',
-        loadChildren: '../fepex-anteriores/fepex-anteriores.module#FepexAnterioresPageModule'
+        path: 'trabalhos-anteriores',
+        loadChildren: '../trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule'
       }
     ]
   }

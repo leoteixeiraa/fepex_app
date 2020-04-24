@@ -12,9 +12,8 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./trabalhos-anteriores-result.page.scss"],
 })
 export class TrabalhosAnterioresResultPage implements OnInit {
-  private trabalhos = new Array<TrabalhoAnterior>();
+  private trabalhos: Array<TrabalhoAnterior>;
   private subsctiption: Subscription;
-  private loading: boolean;
 
   // Parâmetros recebidos
   private ano: number; // 2016 - 2019
@@ -28,7 +27,6 @@ export class TrabalhosAnterioresResultPage implements OnInit {
     private toastController: ToastController,
     private activeRoute: ActivatedRoute
   ) {
-    this.loading = true;
     this.ano = this.activeRoute.snapshot.params["ano"];
     this.categoria = this.activeRoute.snapshot.params["categoria"];
     this.tipo = this.activeRoute.snapshot.params["tipo"];
@@ -37,13 +35,15 @@ export class TrabalhosAnterioresResultPage implements OnInit {
   ngOnInit() {
     try {
       this.subsctiption = this.service
-        .getTrabalhos(this.ano, this.categoria, this.tipo)
-        .subscribe((data) => {
-          this.trabalhos = data;
-        });
+      .getTrabalhos(this.ano, this.categoria, this.tipo)
+      .subscribe((data) => {
+        this.trabalhos = data;
+      });
     } catch (error) {
-    } finally {
-      this.loading = false;
+      this.trabalhos = []
+      console.log('====================================');
+      console.log(error);
+      console.log('====================================');
     }
   }
 }

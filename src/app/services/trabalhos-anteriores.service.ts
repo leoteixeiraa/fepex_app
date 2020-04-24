@@ -16,10 +16,10 @@ export class TrabalhosAnterioresService {
   // private afs: AngularFirestore;
 
   constructor(private afs: AngularFirestore) {
-    this.trabalhosCollection = this.afs.collection<TrabalhoAnterior>(
-      "Trabalhos2016",
-      (ref) => ref.orderBy("titulo")
-    );
+    // this.trabalhosCollection = this.afs.collection<TrabalhoAnterior>(
+    //   "Trabalhos2016",
+    //   (ref) => ref.orderBy("titulo")
+    // );
   }
 
   getTrabalhos(ano: number, categoria: string, tipo: string) {

@@ -48,9 +48,9 @@ export class MenuPage implements OnInit {
       url: '/menu/sobre'
     },
     {
-      icon: 'ios-information-circle',
+      icon: 'folder',
       title: 'FEPEX Anteriores',
-      url: '/menu/fepex-anteriores'
+      url: '/menu/trabalhos-anteriores'
     }
     // {
     //   icon: 'md-trophy',

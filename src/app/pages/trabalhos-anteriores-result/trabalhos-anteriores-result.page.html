@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
+      <!-- <ion-back-button></ion-back-button> -->
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Trabalhos Acadêmicos</ion-title>
@@ -8,41 +9,60 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="loading">
+  <ion-list *ngIf="!trabalhos">
     <!-- Arrays de itens -->
     <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
       <ion-avatar slot="start">
         <ion-skeleton-text animated></ion-skeleton-text>
       </ion-avatar>
       <ion-label>
-        <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
-        <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
-        <p><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></p>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%;"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 30%;"></ion-skeleton-text>
+        </p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <ion-card *ngIf="!loading && !trabalhos.length">
+  <ion-card *ngIf="trabalhos && trabalhos.length == 0" class="ion-text-center">
+    <ion-card-header>
+      <ion-card-subtitle>Nenhuma Informação Encontrada</ion-card-subtitle>
+    </ion-card-header>
     <ion-card-content>
-      Nenhuma informação encontrada!
+      <em>{{ano}} - {{categoria}} - {{tipo}}</em>
+      <ion-item-divider> </ion-item-divider>  
+      <ion-button
+        routerDirection='root'
+        [routerLink]="['/trabalhos-anteriores']"
+        expand="block"
+        color="success"
+        >Tente Novamente</ion-button
+      >
     </ion-card-content>
   </ion-card>
 
   <ion-list>
-    
     <ion-item-sliding *ngFor="let trabalho of trabalhos">
       <!--Abrir pagina de  detalhes-->
-      <ion-item button [routerLink]="['/trabalhos-anteriores-result-detail', trabalho.id]">
-
+      <ion-item
+        button
+        [routerLink]="['/trabalhos-anteriores-result-detail', trabalho.id]"
+      >
         <ion-label>
           {{ trabalho.titulo }}
           <p>{{ trabalho.resumo }}</p>
           <ion-note color="danger">{{trabalho.local}}</ion-note>
         </ion-label>
 
-        <ion-note color="primary" slot="end" *ngIf="trabalho.categoria">{{trabalho.categoria}}</ion-note>
+        <ion-note color="primary" slot="end" *ngIf="trabalho.categoria"
+          >{{trabalho.categoria}}</ion-note
+        >
       </ion-item>
-
     </ion-item-sliding>
   </ion-list>
 </ion-content>

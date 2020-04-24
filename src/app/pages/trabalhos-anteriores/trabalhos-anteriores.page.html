@@ -1,43 +1,123 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+      <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
-    <ion-title>Trabalhos Acadêmicos</ion-title>
+    <ion-title>{{titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list *ngIf="!trabalhos.length">
-    <!-- Arrays de itens -->
-    <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
-      <ion-avatar slot="start">
-        <ion-skeleton-text animated></ion-skeleton-text>
-      </ion-avatar>
-      <ion-label>
-        <h3><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h3>
-        <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
-        <p><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content *ngIf="!ano">
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAno(2016)"
+        expand="block"
+        color="primary"
+        size="large"
+        >FEPEX 2016</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let trabalho of trabalhos">
-      <!--Abrir pagina de  detalhes-->
-      <ion-item button [routerLink]="['/details-trab', trabalho.id]">
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAno(2017)"
+        expand="block"
+        color="secondary"
+        size="large"
+        >FEPEX 2017</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAno(2018)"
+        expand="block"
+        color="tertiary"
+        size="large"
+        >FEPEX 2018</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAno(2019)"
+        expand="block"
+        color="success"
+        size="large"
+        >FEPEX 2019</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
 
-        <ion-label>
-          {{ trabalho.titulo }}
-          <p>{{ trabalho.resumo }}</p>
-          <ion-note color="danger">{{trabalho.local}}</ion-note>
-        </ion-label>
+<ion-content *ngIf="ano && !categoria">
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAnoCategoria('Ensino')"
+        expand="block"
+        color="primary"
+        size="large"
+        >ENSINO</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 
-        <ion-note color="primary" slot="end" *ngIf="trabalho.categoria">{{trabalho.categoria}}</ion-note>
-      </ion-item>
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAnoCategoria('Pesquisa')"
+        expand="block"
+        color="secondary"
+        size="large"
+        >PESQUISA</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 
-    </ion-item-sliding>
-  </ion-list>
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosAnoCategoria('Extensão')"
+        expand="block"
+        color="tertiary"
+        size="large"
+        >EXTENSÃO</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="ano && categoria">
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosResultado('ARTIGO')"
+        expand="block"
+        color="primary"
+        size="large"
+        >Artigos Completos</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button
+        (click)="irParaTrabalhosResultado('Resumo')"
+        expand="block"
+        color="secondary"
+        size="large"
+        >Resumos</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 </ion-content>
