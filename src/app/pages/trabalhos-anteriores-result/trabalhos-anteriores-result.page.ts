@@ -12,7 +12,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./trabalhos-anteriores-result.page.scss"],
 })
 export class TrabalhosAnterioresResultPage implements OnInit {
-  private trabalhos = new Array<TrabalhoAnterior>();
+  private trabalhos;
   private subsctiption: Subscription;
 
   textoBuscar: string = ""; //Filtro

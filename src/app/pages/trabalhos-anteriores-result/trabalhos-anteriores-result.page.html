@@ -59,7 +59,7 @@
   </ion-card>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let trabalho of trabalhos | filtro:textoBuscar; let indice = index">
+    <ion-item-sliding *ngFor="let trabalho of trabalhos | filtro_anteriores:textoBuscar; let indice = index">
       <!--Abrir pagina de  detalhes-->
       <ion-item
         [color]="indice % 2 == 0 ? '' : 'light'"

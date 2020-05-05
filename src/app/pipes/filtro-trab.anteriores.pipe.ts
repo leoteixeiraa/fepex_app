@@ -3,7 +3,7 @@ import { TrabalhoAnterior } from '../interfaces/trabalho_anterior';
 
 
 @Pipe({
-  name: 'filtro'
+  name: 'filtro_anteriores'
 })
 export class FiltroTrabAnterioresPipe implements PipeTransform {
 
