@@ -23,7 +23,6 @@ export class TrabalhosAnterioresPage implements OnInit {
   // Parâmetros da Tela
   private ano: number;
   private categoria: string;
-  private tipo: string;
 
   constructor(
     private service: TrabalhosAnterioresService,
@@ -35,7 +34,6 @@ export class TrabalhosAnterioresPage implements OnInit {
   ) {
     this.ano = this.activeRoute.snapshot.params["ano"];
     this.categoria = this.activeRoute.snapshot.params["categoria"];
-    this.tipo = this.activeRoute.snapshot.params["tipo"];
     this.titulo = this.criarTituloDaTela();
   }
 
