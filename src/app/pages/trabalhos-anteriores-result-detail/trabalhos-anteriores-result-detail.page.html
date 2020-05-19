@@ -5,36 +5,48 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Detalhes</ion-title>
+    <ion-title>Informações</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content> 
+
   <div class="about-info">
-    <h4 class="ion-padding-start">{{trabalho.titulo}} &mdash; {{trabalho.categoria}}</h4>
+    <h6 class="ion-padding-start">{{trabalho.titulo}} &mdash; {{trabalho.categoria}}</h6>
 
     <ion-list lines="none">
+        <ion-card>
+          <ion-item>
+              <ion-label position="stacked" color="primary">Orientadores</ion-label>
+              <h6>{{trabalho.orientadores}}</h6>
+          </ion-item>
+        </ion-card>
+    
+      <ion-card>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Autores</ion-label>
+          <h6>{{trabalho.autores}}</h6>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Resumo</ion-label>
+          <ion-button
+            color="primary"
+            size="small"
+            (click)="showModalResumo()">Clique para ler o resumo</ion-button>
+        </ion-item>
+      </ion-card> 
+
+     <ion-card>
       <ion-item>
-        <ion-icon name="contact" slot="start"></ion-icon>
-        <ion-label position="stacked" color="primary">Orientadores</ion-label>
-        <h6>{{trabalho.orientadores}}</h6>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="contacts" slot="start"></ion-icon>
-        <ion-label position="stacked" color="primary">Autores</ion-label>
-        <h6>{{trabalho.autores}}</h6>
-      </ion-item>
+          <ion-label position="stacked" color="primary">Link do Trabalho</ion-label>
+           <a>
+             {{ trabalho.link }}
+           </a>
+        </ion-item>
+      </ion-card>
     </ion-list>
-
-    <h4 class="ion-padding-start">Resumo</h4>
-    <p class="ion-padding-start ion-padding-end">
-      {{ trabalho.resumo }}
-    </p>
-
-    <h4 class="ion-padding-start">Link do trabalho</h4>
-    <p class="ion-padding-start ion-padding-end">
-      {{ trabalho.link }}
-    </p>
-
   </div>
 </ion-content>

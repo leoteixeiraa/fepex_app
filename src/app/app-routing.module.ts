@@ -60,7 +60,7 @@ const routes: Routes = [
   { path: 'primeira-fepex-artigos/:ano', loadChildren: './pages/primeira-fepex-artigos/primeira-fepex-artigos.module#PrimeiraFepexArtigosPageModule' },
   { path: 'primeira-fepex-resumos/:ano', loadChildren: './pages/primeira-fepex-resumos/primeira-fepex-resumos.module#PrimeiraFepexResumosPageModule' },
   { path: 'filmes', loadChildren: './pages/filmes/filmes.module#FilmesPageModule' },
-
+  { path: 'modalresumo', loadChildren: './pages/modalresumo/modalresumo.module#ModalresumoPageModule' },
 ];
 
 

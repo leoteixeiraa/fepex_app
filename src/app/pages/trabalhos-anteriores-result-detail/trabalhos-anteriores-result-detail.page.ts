@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Trabalho } from 'src/app/interfaces/trabalho';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, ModalController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TrabalhoService } from 'src/app/services/trabalho.service';
 import { TrabalhosAnterioresService } from 'src/app/services/trabalhos-anteriores.service';
+import { ModalresumoPage } from '../modalresumo/modalresumo.page';
 
 @Component({
   selector: 'app-trabalhos-anteriores-result-detail',
@@ -26,7 +27,8 @@ export class TrabalhosAnterioresResultDetailPage implements OnInit {
     private authService: AuthService,
     private activeRoute: ActivatedRoute,
     private trabalhoService: TrabalhosAnterioresService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private modalCtrl: ModalController
   ) {
     this.trabalhoId = this.activeRoute.snapshot.params['id'];
     //se o id estiver no parametro
@@ -43,6 +45,14 @@ export class TrabalhosAnterioresResultDetailPage implements OnInit {
     this.trabalhoSubscription = this.trabalhoService.getTrabalho(this.trabalhoId).subscribe(data => {
       this.trabalho = data;
     });
+  };
+
+  async showModalResumo() {
+    const modal = await this.modalCtrl.create({
+      component: ModalresumoPage
+    });
+
+    modal.present();
   }
 
 }
