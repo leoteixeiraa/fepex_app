@@ -12,7 +12,22 @@
 <ion-content> 
 
   <div class="about-info">
-    <h6 class="ion-padding-start">{{trabalho.titulo}} &mdash; {{trabalho.categoria}}</h6>
+    <ion-card>
+      
+      <ion-item class="ion-text-center">
+        <h4 class="ion-padding-start">{{trabalho.titulo}}</h4>
+      </ion-item>
+
+      <ion-item class="ion-text-center">
+        <ion-badge color="primary" id="btn_resumo" (click)="showModalResumo()">
+          Ler Resumo
+        </ion-badge>
+        <ion-badge color="success" class="ion-margin-start">
+          <a [href]="trabalho.link" id="download">Baixar Trabalho</a>
+        </ion-badge>
+      </ion-item>
+
+    </ion-card>
 
     <ion-list lines="none">
         <ion-card>
@@ -29,7 +44,7 @@
         </ion-item>
       </ion-card>
 
-      <ion-card>
+      <!-- <ion-card>
         <ion-item>
           <ion-label position="stacked" color="primary">Resumo</ion-label>
           <ion-button
@@ -42,11 +57,11 @@
      <ion-card>
       <ion-item>
           <ion-label position="stacked" color="primary">Link do Trabalho</ion-label>
-           <a>
-             {{ trabalho.link }}
+           <a [href]="trabalho.link">
+             Baixar Trabalho
            </a>
         </ion-item>
-      </ion-card>
+      </ion-card> -->
     </ion-list>
   </div>
 </ion-content>

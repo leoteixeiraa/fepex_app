@@ -49,7 +49,10 @@ export class TrabalhosAnterioresResultDetailPage implements OnInit {
 
   async showModalResumo() {
     const modal = await this.modalCtrl.create({
-      component: ModalresumoPage
+      component: ModalresumoPage,
+      componentProps: {
+        trabalho: this.trabalho
+      }
     });
 
     modal.present();
