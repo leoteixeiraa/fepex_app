@@ -49,6 +49,10 @@ const routes: Routes = [
       {
         path: 'anteriores',
         loadChildren: '../trabalhos-anteriores/trabalhos-anteriores.module#TrabalhosAnterioresPageModule'
+      },
+      {
+      path: 'novasideias',
+      loadChildren: '../novasideias/novasideias.module#NovasideiasPageModule'
       }
     ]
   }

@@ -60,6 +60,11 @@ export class MenuPage implements OnInit {
       icon: 'folder',
       title: 'FEPEX Anteriores',
       url: '/menu/anteriores',
+    },
+    {
+      icon: 'ios-information-circle',
+      title: 'Novas Ideias',
+      url: '/menu/novasideias'
     }
   ]
 
