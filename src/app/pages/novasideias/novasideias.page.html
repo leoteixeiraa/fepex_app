@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+
   <ion-card>
     <ion-card-content>
       Conte-nos sua ideia através de uma foto, um vídeo, um áudio ou uma mensagem.
@@ -17,7 +18,9 @@
   <ion-card>
     <ion-item>
       <ion-label position="stacked">Novas Ideias</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="mensagem"></ion-textarea>
     </ion-item>
   </ion-card>  
+
+  <ion-button (click)="salvar()" type="submit" expand="block">Enviar Ideia</ion-button>
 </ion-content>

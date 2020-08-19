@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./novasideias.page.scss'],
 })
 export class NovasideiasPage implements OnInit {
+  private mensagem: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  salvar() {
+    
   }
 
 }
