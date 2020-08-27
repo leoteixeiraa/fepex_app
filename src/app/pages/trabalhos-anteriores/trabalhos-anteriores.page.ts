@@ -60,7 +60,7 @@ export class TrabalhosAnterioresPage implements OnInit {
     } else if (this.ano) {
       return "FEPEX " + this.ano;
     } else {
-      return "FEPEX Anteriores";
+      return "FEPEX";
     }
   }
 }

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="pesquisa.fepex.app.fraiburgo" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="pesquisa.fepex.app.fraiburgo" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>FEPEX</name>
     <description>Aplicativo OFICIAL DA FEPEX CAMPUS FRAIBURGO 2019</description>
     <author email="leovenancio00@gmail.com" href="http://pesquisa.fraiburgo.ifc.edu.br/">Coodernação de Pesquisa Fraiburgo - Bolsista Leonardo Teixeira</author>

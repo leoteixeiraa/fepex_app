@@ -1,15 +1,27 @@
-<ion-header>
+<ion-header *ngIf="ano">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
       <ion-menu-button *ngIf="!ano"></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{titulo}}</ion-title>
+    <ion-title class="ion-text-center">{{titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="!ano">
-  <ion-card>
+<ion-content *ngIf="!ano" class="background-image">
+  <ion-card color="light">
+    <ion-card-content>
+      <ion-text color="dark">
+        A FEPEX (Feira de Ensino, Pesquisa e Extensão), realizada pelo Instituto
+        Federal Catarinense - Campus Fraiburgo visa consolidar o espaço de
+        pesquisa científica multidisciplinar.
+        <strong>Acesse e confira</strong> os trabalhos apresentados em todas as
+        edições anteriores.
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="light">
     <ion-card-content>
       <ion-button
         (click)="irParaTrabalhosAno(2016)"
@@ -18,11 +30,6 @@
         size="large"
         >FEPEX 2016</ion-button
       >
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
       <ion-button
         (click)="irParaTrabalhosAno(2017)"
         expand="block"
@@ -30,11 +37,6 @@
         size="large"
         >FEPEX 2017</ion-button
       >
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
       <ion-button
         (click)="irParaTrabalhosAno(2018)"
         expand="block"
@@ -42,11 +44,6 @@
         size="large"
         >FEPEX 2018</ion-button
       >
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
       <ion-button
         (click)="irParaTrabalhosAno(2019)"
         expand="block"
@@ -58,7 +55,7 @@
   </ion-card>
 </ion-content>
 
-<ion-content *ngIf="ano && !categoria">
+<ion-content *ngIf="ano && !categoria" class="background-image">
   <ion-card>
     <ion-card-content>
       <ion-button
@@ -96,7 +93,7 @@
   </ion-card>
 </ion-content>
 
-<ion-content *ngIf="ano && categoria">
+<ion-content *ngIf="ano && categoria" class="background-image">
   <ion-card>
     <ion-card-content>
       <ion-button
@@ -121,3 +118,7 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+<ion-footer class="ion-text-center">
+  <img src="/assets/img/logo2.jpeg" width="90" />
+</ion-footer>

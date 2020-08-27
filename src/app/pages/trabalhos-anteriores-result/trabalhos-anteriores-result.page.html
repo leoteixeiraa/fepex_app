@@ -15,7 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background-image">
   <ion-list *ngIf="!trabalhos">
     <!-- Arrays de itens -->
     <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
@@ -39,7 +39,9 @@
   <!-- Mostrar os parâmetros informados pelo usuário -->
   <ion-card *ngIf="ano && categoria && tipo" class="ion-text-center">
     <ion-badge color="tertiary" style="margin-right: 10px;">{{ano}}</ion-badge>
-    <ion-badge color="tertiary" style="margin-right: 10px;">{{categoria}}</ion-badge>
+    <ion-badge color="tertiary" style="margin-right: 10px;"
+      >{{categoria}}</ion-badge
+    >
     <ion-badge color="tertiary" style="margin-right: 10px;">{{tipo}}</ion-badge>
   </ion-card>
 
@@ -59,7 +61,9 @@
   </ion-card>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let trabalho of trabalhos | filtro_anteriores:textoBuscar; let indice = index">
+    <ion-item-sliding
+      *ngFor="let trabalho of trabalhos | filtro_anteriores:textoBuscar; let indice = index"
+    >
       <!--Abrir pagina de  detalhes-->
       <ion-item
         [color]="indice % 2 == 0 ? '' : 'light'"

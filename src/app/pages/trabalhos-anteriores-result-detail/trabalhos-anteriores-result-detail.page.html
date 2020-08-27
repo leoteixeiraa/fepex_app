@@ -9,11 +9,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> 
-
+<ion-content>
   <div class="about-info">
     <ion-card>
-      
       <ion-item class="ion-text-center">
         <h4 class="ion-padding-start">{{trabalho.titulo}}</h4>
       </ion-item>
@@ -26,17 +24,16 @@
           <a [href]="trabalho.link" id="download">Baixar Trabalho</a>
         </ion-badge>
       </ion-item>
-
     </ion-card>
 
     <ion-list lines="none">
-        <ion-card>
-          <ion-item>
-              <ion-label position="stacked" color="success">Orientadores</ion-label>
-              <h6>{{trabalho.orientadores}}</h6>
-          </ion-item>
-        </ion-card>
-    
+      <ion-card>
+        <ion-item>
+          <ion-label position="stacked" color="success">Orientadores</ion-label>
+          <h6>{{trabalho.orientadores}}</h6>
+        </ion-item>
+      </ion-card>
+
       <ion-card>
         <ion-item>
           <ion-label position="stacked" color="success">Autores</ion-label>
